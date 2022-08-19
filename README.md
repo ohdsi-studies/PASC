@@ -6,7 +6,7 @@ ODAP-B Long COVID
 - Analytics use case(s): **Patient-Level Prediction**
 - Study type: **Methods Research**
 - Tags: **-**
-- Study lead: **add name**
+- Study lead: **Jiayi Tong**, **Yong Chen**, **Lu Li**, **Jenna Reps**
 - Study lead forums tag: **[add_username](https://forums.ohdsi.org/u/add_username)**
 - Study start date: **08 2022**
 - Study end date: **10 2022**
