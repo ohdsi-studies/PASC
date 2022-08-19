@@ -1,0 +1,589 @@
+{
+  "skeletonType": "PatientLevelPredictionStudy",
+  "organizationName": "OHDSI",
+  "skeletonVersion": "v1.0.0",
+  "packageName": "PASC",
+  "analyses": [
+    {
+      "targetId": 8318,
+      "outcomeId": 8312,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": {
+        "temporal": false,
+        "temporalSequence": false,
+        "DemographicsGender": true,
+        "DemographicsAge": true,
+        "DemographicsRace": true,
+        "longTermStartDays": -365,
+        "mediumTermStartDays": -180,
+        "shortTermStartDays": -30,
+        "endDays": 0,
+        "includedCovariateConceptIds": [],
+        "addDescendantsToInclude": false,
+        "excludedCovariateConceptIds": [],
+        "addDescendantsToExclude": false,
+        "includedCovariateIds": [],
+        "attr_fun": "getDbDefaultCovariateData",
+        "attr_class": "covariateSettings"
+      },
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 365,
+        "removeSubjectsWithPriorOutcome": true,
+        "priorOutcomeLookback": 99999,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 364,
+        "riskWindowStart": 28,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 179,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": [
+        {
+          "numberOutcomestoNonOutcomes": 1,
+          "sampleSeed": 1,
+          "attr_fun": "sameData",
+          "attr_class": "sampleSettings"
+        }
+      ],
+      "featureEngineeringSettings": [
+        {
+          "attr_fun": "sameData",
+          "attr_class": "featureEngineeringSettings"
+        }
+      ],
+      "preprocessSettings": {
+        "minFraction": 0,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 55110810,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "splitSettings": {
+        "test": 0.25,
+        "train": 0.75,
+        "seed": 77305,
+        "nfold": 3,
+        "attr_fun": "randomSplitter",
+        "attr_class": "splitSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": false,
+        "runfeatureEngineering": false,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 8318,
+      "outcomeId": 8314,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": {
+        "temporal": false,
+        "temporalSequence": false,
+        "DemographicsGender": true,
+        "DemographicsAge": true,
+        "DemographicsRace": true,
+        "longTermStartDays": -365,
+        "mediumTermStartDays": -180,
+        "shortTermStartDays": -30,
+        "endDays": 0,
+        "includedCovariateConceptIds": [],
+        "addDescendantsToInclude": false,
+        "excludedCovariateConceptIds": [],
+        "addDescendantsToExclude": false,
+        "includedCovariateIds": [],
+        "attr_fun": "getDbDefaultCovariateData",
+        "attr_class": "covariateSettings"
+      },
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 365,
+        "removeSubjectsWithPriorOutcome": true,
+        "priorOutcomeLookback": 99999,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 364,
+        "riskWindowStart": 28,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 179,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": [
+        {
+          "numberOutcomestoNonOutcomes": 1,
+          "sampleSeed": 1,
+          "attr_fun": "sameData",
+          "attr_class": "sampleSettings"
+        }
+      ],
+      "featureEngineeringSettings": [
+        {
+          "attr_fun": "sameData",
+          "attr_class": "featureEngineeringSettings"
+        }
+      ],
+      "preprocessSettings": {
+        "minFraction": 0,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 38576015,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "splitSettings": {
+        "test": 0.25,
+        "train": 0.75,
+        "seed": 64879,
+        "nfold": 3,
+        "attr_fun": "randomSplitter",
+        "attr_class": "splitSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": false,
+        "runfeatureEngineering": false,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 8318,
+      "outcomeId": 8315,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": {
+        "temporal": false,
+        "temporalSequence": false,
+        "DemographicsGender": true,
+        "DemographicsAge": true,
+        "DemographicsRace": true,
+        "longTermStartDays": -365,
+        "mediumTermStartDays": -180,
+        "shortTermStartDays": -30,
+        "endDays": 0,
+        "includedCovariateConceptIds": [],
+        "addDescendantsToInclude": false,
+        "excludedCovariateConceptIds": [],
+        "addDescendantsToExclude": false,
+        "includedCovariateIds": [],
+        "attr_fun": "getDbDefaultCovariateData",
+        "attr_class": "covariateSettings"
+      },
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 365,
+        "removeSubjectsWithPriorOutcome": true,
+        "priorOutcomeLookback": 99999,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 364,
+        "riskWindowStart": 28,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 179,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": [
+        {
+          "numberOutcomestoNonOutcomes": 1,
+          "sampleSeed": 1,
+          "attr_fun": "sameData",
+          "attr_class": "sampleSettings"
+        }
+      ],
+      "featureEngineeringSettings": [
+        {
+          "attr_fun": "sameData",
+          "attr_class": "featureEngineeringSettings"
+        }
+      ],
+      "preprocessSettings": {
+        "minFraction": 0,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 12186980,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "splitSettings": {
+        "test": 0.25,
+        "train": 0.75,
+        "seed": 96650,
+        "nfold": 3,
+        "attr_fun": "randomSplitter",
+        "attr_class": "splitSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": false,
+        "runfeatureEngineering": false,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 8318,
+      "outcomeId": 8316,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": {
+        "temporal": false,
+        "temporalSequence": false,
+        "DemographicsGender": true,
+        "DemographicsAge": true,
+        "DemographicsRace": true,
+        "longTermStartDays": -365,
+        "mediumTermStartDays": -180,
+        "shortTermStartDays": -30,
+        "endDays": 0,
+        "includedCovariateConceptIds": [],
+        "addDescendantsToInclude": false,
+        "excludedCovariateConceptIds": [],
+        "addDescendantsToExclude": false,
+        "includedCovariateIds": [],
+        "attr_fun": "getDbDefaultCovariateData",
+        "attr_class": "covariateSettings"
+      },
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 365,
+        "removeSubjectsWithPriorOutcome": true,
+        "priorOutcomeLookback": 99999,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 364,
+        "riskWindowStart": 28,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 179,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": [
+        {
+          "numberOutcomestoNonOutcomes": 1,
+          "sampleSeed": 1,
+          "attr_fun": "sameData",
+          "attr_class": "sampleSettings"
+        }
+      ],
+      "featureEngineeringSettings": [
+        {
+          "attr_fun": "sameData",
+          "attr_class": "featureEngineeringSettings"
+        }
+      ],
+      "preprocessSettings": {
+        "minFraction": 0,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 97412755,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "splitSettings": {
+        "test": 0.25,
+        "train": 0.75,
+        "seed": 74302,
+        "nfold": 3,
+        "attr_fun": "randomSplitter",
+        "attr_class": "splitSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": false,
+        "runfeatureEngineering": false,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    },
+    {
+      "targetId": 8318,
+      "outcomeId": 8317,
+      "restrictPlpDataSettings": {
+        "studyStartDate": "",
+        "studyEndDate": "",
+        "firstExposureOnly": false,
+        "washoutPeriod": 0,
+        "sampleSize": null,
+        "attr_class": "restrictPlpDataSettings"
+      },
+      "covariateSettings": {
+        "temporal": false,
+        "temporalSequence": false,
+        "DemographicsGender": true,
+        "DemographicsAge": true,
+        "DemographicsRace": true,
+        "longTermStartDays": -365,
+        "mediumTermStartDays": -180,
+        "shortTermStartDays": -30,
+        "endDays": 0,
+        "includedCovariateConceptIds": [],
+        "addDescendantsToInclude": false,
+        "excludedCovariateConceptIds": [],
+        "addDescendantsToExclude": false,
+        "includedCovariateIds": [],
+        "attr_fun": "getDbDefaultCovariateData",
+        "attr_class": "covariateSettings"
+      },
+      "populationSettings": {
+        "binary": true,
+        "includeAllOutcomes": true,
+        "firstExposureOnly": false,
+        "washoutPeriod": 365,
+        "removeSubjectsWithPriorOutcome": true,
+        "priorOutcomeLookback": 99999,
+        "requireTimeAtRisk": false,
+        "minTimeAtRisk": 364,
+        "riskWindowStart": 28,
+        "startAnchor": "cohort start",
+        "riskWindowEnd": 179,
+        "endAnchor": "cohort start",
+        "restrictTarToCohortEnd": false,
+        "attr_class": "populationSettings"
+      },
+      "sampleSettings": [
+        {
+          "numberOutcomestoNonOutcomes": 1,
+          "sampleSeed": 1,
+          "attr_fun": "sameData",
+          "attr_class": "sampleSettings"
+        }
+      ],
+      "featureEngineeringSettings": [
+        {
+          "attr_fun": "sameData",
+          "attr_class": "featureEngineeringSettings"
+        }
+      ],
+      "preprocessSettings": {
+        "minFraction": 0,
+        "normalize": true,
+        "removeRedundancy": true,
+        "attr_class": "preprocessSettings"
+      },
+      "modelSettings": {
+        "fitFunction": "fitCyclopsModel",
+        "param": {
+          "priorParams": {
+            "priorType": "laplace",
+            "forceIntercept": false,
+            "variance": 0.01,
+            "exclude": 0
+          },
+          "includeCovariateIds": null,
+          "upperLimit": 20,
+          "lowerLimit": 0.01,
+          "attr_settings": {
+            "priorfunction": "Cyclops::createPrior",
+            "selectorType": "byPid",
+            "crossValidationInPrior": true,
+            "modelType": "logistic",
+            "addIntercept": true,
+            "useControl": true,
+            "seed": 69276638,
+            "name": "Lasso Logistic Regression",
+            "threads": -1,
+            "tolerance": 2e-06,
+            "cvRepetitions": 1,
+            "maxIterations": 3000
+          },
+          "attr_modelType": "binary",
+          "attr_saveType": "RtoJson"
+        },
+        "attr_class": "modelSettings"
+      },
+      "splitSettings": {
+        "test": 0.25,
+        "train": 0.75,
+        "seed": 89645,
+        "nfold": 3,
+        "attr_fun": "randomSplitter",
+        "attr_class": "splitSettings"
+      },
+      "executeSettings": {
+        "runSplitData": true,
+        "runSampleData": false,
+        "runfeatureEngineering": false,
+        "runPreprocessData": true,
+        "runModelDevelopment": true,
+        "runCovariateSummary": true,
+        "attr_class": "executeSettings"
+      },
+      "attr_class": "modelDesign"
+    }
+  ],
+  "cohortDefinitions": {
+    "name": ["[PASC] target children with covid test any visit", "[PASC] Outcome hair loss", "[PASC] Outcome loss of smell", "[PASC] Outcome other changes in smell or taste", "[PASC] Outcome multisystem inflammatory syndrome", "[PASC] Outcome addison disease"],
+    "id": [8318, 8312, 8314, 8315, 8316, 8317],
+    "json": ["{\n\t\"cdmVersionRange\" : \">=5.0.0\",\n\t\"PrimaryCriteria\" : {\n\t\t\"CriteriaList\" : [\n\t\t\t{\n\t\t\t\t\"Measurement\" : {\n\t\t\t\t\t\"CodesetId\" : 2,\n\t\t\t\t\t\"OccurrenceStartDate\" : {\n\t\t\t\t\t\t\"Value\" : \"2020-03-01\",\n\t\t\t\t\t\t\"Op\" : \"bt\",\n\t\t\t\t\t\t\"Extent\" : \"2021-10-31\"\n\t\t\t\t\t},\n\t\t\t\t\t\"MeasurementTypeExclude\" : false,\n\t\t\t\t\t\"ValueAsConcept\" : [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 4181412,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Present\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"52101004\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 9191,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Positive\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"10828004\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 4126681,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"260373001\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45879438,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Present\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA9633-4\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45884084,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Positive\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA6576-8\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45877985,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA11882-0\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"Age\" : {\n\t\t\t\t\t\t\"Value\" : 21,\n\t\t\t\t\t\t\"Op\" : \"lt\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"Measurement\" : {\n\t\t\t\t\t\"CorrelatedCriteria\" : {\n\t\t\t\t\t\t\"Type\" : \"ALL\",\n\t\t\t\t\t\t\"CriteriaList\" : [\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"Criteria\" : {\n\t\t\t\t\t\t\t\t\t\"Measurement\" : {\n\t\t\t\t\t\t\t\t\t\t\"CodesetId\" : 2,\n\t\t\t\t\t\t\t\t\t\t\"OccurrenceStartDate\" : {\n\t\t\t\t\t\t\t\t\t\t\t\"Value\" : \"2020-03-01\",\n\t\t\t\t\t\t\t\t\t\t\t\"Op\" : \"bt\",\n\t\t\t\t\t\t\t\t\t\t\t\"Extent\" : \"2021-10-31\"\n\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\"MeasurementTypeExclude\" : false,\n\t\t\t\t\t\t\t\t\t\t\"ValueAsConcept\" : [\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_ID\" : 4181412,\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Present\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"52101004\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_ID\" : 9191,\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Positive\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"10828004\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_ID\" : 4126681,\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Detected\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"260373001\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45879438,\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Present\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA9633-4\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45884084,\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Positive\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA6576-8\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45877985,\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Detected\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA11882-0\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t]\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"StartWindow\" : {\n\t\t\t\t\t\t\t\t\t\"Start\" : {\n\t\t\t\t\t\t\t\t\t\t\"Coeff\" : -1\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"End\" : {\n\t\t\t\t\t\t\t\t\t\t\"Coeff\" : 1\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"UseIndexEnd\" : false,\n\t\t\t\t\t\t\t\t\t\"UseEventEnd\" : false\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"RestrictVisit\" : false,\n\t\t\t\t\t\t\t\t\"IgnoreObservationPeriod\" : false,\n\t\t\t\t\t\t\t\t\"Occurrence\" : {\n\t\t\t\t\t\t\t\t\t\"Type\" : 0,\n\t\t\t\t\t\t\t\t\t\"Count\" : 0,\n\t\t\t\t\t\t\t\t\t\"IsDistinct\" : false\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"DemographicCriteriaList\" : [],\n\t\t\t\t\t\t\"Groups\" : []\n\t\t\t\t\t},\n\t\t\t\t\t\"CodesetId\" : 2,\n\t\t\t\t\t\"OccurrenceStartDate\" : {\n\t\t\t\t\t\t\"Value\" : \"2020-03-01\",\n\t\t\t\t\t\t\"Op\" : \"bt\",\n\t\t\t\t\t\t\"Extent\" : \"2021-10-31\"\n\t\t\t\t\t},\n\t\t\t\t\t\"MeasurementTypeExclude\" : false,\n\t\t\t\t\t\"ValueAsConcept\" : [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 9189,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Negative\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"260385009\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 9190,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Not detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"260415000\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 4132135,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Absent\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"2667000\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45884086,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Absent\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA9634-2\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 37079494,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Negative (0)\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA29782-2\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45878583,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Negative\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA6577-6\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45880296,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Not detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA11883-8\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 3661867,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Not detected in pooled specimen\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"895231008\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"Age\" : {\n\t\t\t\t\t\t\"Value\" : 21,\n\t\t\t\t\t\t\"Op\" : \"lt\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t],\n\t\t\"ObservationWindow\" : {\n\t\t\t\"PriorDays\" : 0,\n\t\t\t\"PostDays\" : 0\n\t\t},\n\t\t\"PrimaryCriteriaLimit\" : {\n\t\t\t\"Type\" : \"First\"\n\t\t}\n\t},\n\t\"ConceptSets\" : [\n\t\t{\n\t\t\t\"id\" : 1,\n\t\t\t\"name\" : \"SARS-CoV-2 positive test measurement pre-coordinated\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"items\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 37310282,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"2019 novel coronavirus detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"1240581000000104\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 756055,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Measurement of Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"OMOP4873969\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"OMOP Extension\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Lab Test\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 756084,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Measurement of Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) using Nucleic acid amplification technique in Unspecified specimen\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"OMOP4873968\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"OMOP Extension\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Lab Test\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 37310282,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Severe acute respiratory syndrome coronavirus 2 detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"N\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Non-Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"1240581000000104\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : false,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\" : 2,\n\t\t\t\"name\" : \"SARS-CoV-2 test measurement\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"items\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 756055,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Measurement of severe acute respiratory syndrome coronavirus 2\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"OMOP4873969\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"OMOP Extension\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Procedure\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 704058,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"2019-nCoV Coronavirus, SARS-CoV-2/2019-nCoV (COVID-19), any technique, multiple types or subtypes (includes all targets), non-CDC, making use of high throughput technologies as described by CMS-2020-01-R\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"U0004\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"HCPCS\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"HCPCS\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 704059,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Infectious agent detection by nucleic acid (DNA or RNA); severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) (Coronavirus disease [COVID-19]), amplified probe technique, making use of high throughput technologies as described by CMS-2020-01-R\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"U0003\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"HCPCS\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"HCPCS\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 37310258,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Measurement of Severe acute respiratory syndrome coronavirus 2 antibody\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"1240461000000109\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Procedure\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : true,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\" : 5,\n\t\t\t\"name\" : \"Inpatient Visit or ER or outpatient\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"items\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 262,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Emergency Room and Inpatient Visit\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"ERIP\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Visit\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 9201,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Inpatient Visit\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"IP\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Visit\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 9203,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Emergency Room Visit\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"ER\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Visit\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 262,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Emergency Room and Inpatient Visit\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"ERIP\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Visit\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 8870,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Emergency Room - Hospital\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"23\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"CMS Place of Service\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Visit\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 9202,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Outpatient Visit\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"OP\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Visit\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 8756,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Outpatient Hospital\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"22\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"CMS Place of Service\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Visit\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\" : 6,\n\t\t\t\"name\" : \"SARS-CoV-2 negative test measurement pre-coordinated\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"items\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 37310281,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Severe acute respiratory syndrome coronavirus 2 not detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"N\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Non-Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"1240591000000102\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 37310281,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Severe acute respiratory syndrome coronavirus 2 not detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"N\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Non-Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"1240591000000102\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t}\n\t],\n\t\"QualifiedLimit\" : {\n\t\t\"Type\" : \"First\"\n\t},\n\t\"ExpressionLimit\" : {\n\t\t\"Type\" : \"First\"\n\t},\n\t\"InclusionRules\" : [\n\t\t{\n\t\t\t\"name\" : \"has >=180 day prior observation\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"Type\" : \"ALL\",\n\t\t\t\t\"CriteriaList\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"Criteria\" : {\n\t\t\t\t\t\t\t\"ObservationPeriod\" : {}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"StartWindow\" : {\n\t\t\t\t\t\t\t\"Start\" : {\n\t\t\t\t\t\t\t\t\"Coeff\" : -1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"End\" : {\n\t\t\t\t\t\t\t\t\"Days\" : 180,\n\t\t\t\t\t\t\t\t\"Coeff\" : -1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"UseIndexEnd\" : false,\n\t\t\t\t\t\t\t\"UseEventEnd\" : false\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"EndWindow\" : {\n\t\t\t\t\t\t\t\"Start\" : {\n\t\t\t\t\t\t\t\t\"Days\" : 0,\n\t\t\t\t\t\t\t\t\"Coeff\" : -1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"End\" : {\n\t\t\t\t\t\t\t\t\"Coeff\" : 1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"UseIndexEnd\" : false,\n\t\t\t\t\t\t\t\"UseEventEnd\" : true\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"RestrictVisit\" : false,\n\t\t\t\t\t\t\"IgnoreObservationPeriod\" : false,\n\t\t\t\t\t\t\"Occurrence\" : {\n\t\t\t\t\t\t\t\"Type\" : 2,\n\t\t\t\t\t\t\t\"Count\" : 1,\n\t\t\t\t\t\t\t\"IsDistinct\" : false\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"DemographicCriteriaList\" : [],\n\t\t\t\t\"Groups\" : []\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"name\" : \"inpatient, outpatient or ER visit\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"Type\" : \"ALL\",\n\t\t\t\t\"CriteriaList\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"Criteria\" : {\n\t\t\t\t\t\t\t\"VisitOccurrence\" : {\n\t\t\t\t\t\t\t\t\"VisitTypeExclude\" : false\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"StartWindow\" : {\n\t\t\t\t\t\t\t\"Start\" : {\n\t\t\t\t\t\t\t\t\"Coeff\" : -1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"End\" : {\n\t\t\t\t\t\t\t\t\"Days\" : 0,\n\t\t\t\t\t\t\t\t\"Coeff\" : -1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"UseIndexEnd\" : false,\n\t\t\t\t\t\t\t\"UseEventEnd\" : false\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"EndWindow\" : {\n\t\t\t\t\t\t\t\"Start\" : {\n\t\t\t\t\t\t\t\t\"Days\" : 0,\n\t\t\t\t\t\t\t\t\"Coeff\" : 1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"End\" : {\n\t\t\t\t\t\t\t\t\"Coeff\" : 1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"UseIndexEnd\" : false,\n\t\t\t\t\t\t\t\"UseEventEnd\" : true\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"RestrictVisit\" : false,\n\t\t\t\t\t\t\"IgnoreObservationPeriod\" : false,\n\t\t\t\t\t\t\"Occurrence\" : {\n\t\t\t\t\t\t\t\"Type\" : 2,\n\t\t\t\t\t\t\t\"Count\" : 1,\n\t\t\t\t\t\t\t\"IsDistinct\" : false\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"DemographicCriteriaList\" : [],\n\t\t\t\t\"Groups\" : []\n\t\t\t}\n\t\t}\n\t],\n\t\"EndStrategy\" : {\n\t\t\"DateOffset\" : {\n\t\t\t\"DateField\" : \"EndDate\",\n\t\t\t\"Offset\" : 0\n\t\t}\n\t},\n\t\"CensoringCriteria\" : [],\n\t\"CollapseSettings\" : {\n\t\t\"CollapseType\" : \"ERA\",\n\t\t\"EraPad\" : 90\n\t},\n\t\"CensorWindow\" : {}\n}", "{\n\t\"cdmVersionRange\" : \">=5.0.0\",\n\t\"PrimaryCriteria\" : {\n\t\t\"CriteriaList\" : [\n\t\t\t{\n\t\t\t\t\"ConditionOccurrence\" : {\n\t\t\t\t\t\"CodesetId\" : 0,\n\t\t\t\t\t\"ConditionTypeExclude\" : false\n\t\t\t\t}\n\t\t\t}\n\t\t],\n\t\t\"ObservationWindow\" : {\n\t\t\t\"PriorDays\" : 0,\n\t\t\t\"PostDays\" : 0\n\t\t},\n\t\t\"PrimaryCriteriaLimit\" : {\n\t\t\t\"Type\" : \"All\"\n\t\t}\n\t},\n\t\"ConceptSets\" : [\n\t\t{\n\t\t\t\"id\" : 0,\n\t\t\t\"name\" : \"PASC hair loss (narrow as defined)\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"items\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 140173,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Telogen effluvium\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"39479004\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Condition\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : false,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 4031164,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Non-scarring alopecia\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"238725004\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Condition\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : false,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 4099746,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Alopecia mucinosa\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"27382006\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Condition\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : false,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t}\n\t],\n\t\"QualifiedLimit\" : {\n\t\t\"Type\" : \"First\"\n\t},\n\t\"ExpressionLimit\" : {\n\t\t\"Type\" : \"All\"\n\t},\n\t\"InclusionRules\" : [],\n\t\"EndStrategy\" : {\n\t\t\"DateOffset\" : {\n\t\t\t\"DateField\" : \"StartDate\",\n\t\t\t\"Offset\" : 0\n\t\t}\n\t},\n\t\"CensoringCriteria\" : [],\n\t\"CollapseSettings\" : {\n\t\t\"CollapseType\" : \"ERA\",\n\t\t\"EraPad\" : 0\n\t},\n\t\"CensorWindow\" : {}\n}", "{\n\t\"cdmVersionRange\" : \">=5.0.0\",\n\t\"PrimaryCriteria\" : {\n\t\t\"CriteriaList\" : [\n\t\t\t{\n\t\t\t\t\"ConditionOccurrence\" : {\n\t\t\t\t\t\"CodesetId\" : 1,\n\t\t\t\t\t\"ConditionTypeExclude\" : false\n\t\t\t\t}\n\t\t\t}\n\t\t],\n\t\t\"ObservationWindow\" : {\n\t\t\t\"PriorDays\" : 0,\n\t\t\t\"PostDays\" : 0\n\t\t},\n\t\t\"PrimaryCriteriaLimit\" : {\n\t\t\t\"Type\" : \"All\"\n\t\t}\n\t},\n\t\"ConceptSets\" : [\n\t\t{\n\t\t\t\"id\" : 1,\n\t\t\t\"name\" : \"PASC loss of smell\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"items\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 46270715,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Parosmia\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"708673009\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Condition\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 4185711,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Loss of sense of smell\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"44169009\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Condition\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t}\n\t],\n\t\"QualifiedLimit\" : {\n\t\t\"Type\" : \"First\"\n\t},\n\t\"ExpressionLimit\" : {\n\t\t\"Type\" : \"All\"\n\t},\n\t\"InclusionRules\" : [],\n\t\"EndStrategy\" : {\n\t\t\"DateOffset\" : {\n\t\t\t\"DateField\" : \"StartDate\",\n\t\t\t\"Offset\" : 0\n\t\t}\n\t},\n\t\"CensoringCriteria\" : [],\n\t\"CollapseSettings\" : {\n\t\t\"CollapseType\" : \"ERA\",\n\t\t\"EraPad\" : 0\n\t},\n\t\"CensorWindow\" : {}\n}", "{\n\t\"cdmVersionRange\" : \">=5.0.0\",\n\t\"PrimaryCriteria\" : {\n\t\t\"CriteriaList\" : [\n\t\t\t{\n\t\t\t\t\"ConditionOccurrence\" : {\n\t\t\t\t\t\"CodesetId\" : 0,\n\t\t\t\t\t\"ConditionTypeExclude\" : false\n\t\t\t\t}\n\t\t\t}\n\t\t],\n\t\t\"ObservationWindow\" : {\n\t\t\t\"PriorDays\" : 0,\n\t\t\t\"PostDays\" : 0\n\t\t},\n\t\t\"PrimaryCriteriaLimit\" : {\n\t\t\t\"Type\" : \"All\"\n\t\t}\n\t},\n\t\"ConceptSets\" : [\n\t\t{\n\t\t\t\"id\" : 0,\n\t\t\t\"name\" : \"PASC other changes in smell or taste\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"items\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 43530714,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Sensory disorder of smell and/or taste\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"2611000119103\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Condition\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : false,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t}\n\t],\n\t\"QualifiedLimit\" : {\n\t\t\"Type\" : \"First\"\n\t},\n\t\"ExpressionLimit\" : {\n\t\t\"Type\" : \"All\"\n\t},\n\t\"InclusionRules\" : [],\n\t\"EndStrategy\" : {\n\t\t\"DateOffset\" : {\n\t\t\t\"DateField\" : \"StartDate\",\n\t\t\t\"Offset\" : 0\n\t\t}\n\t},\n\t\"CensoringCriteria\" : [],\n\t\"CollapseSettings\" : {\n\t\t\"CollapseType\" : \"ERA\",\n\t\t\"EraPad\" : 0\n\t},\n\t\"CensorWindow\" : {}\n}", "{\n\t\"cdmVersionRange\" : \">=5.0.0\",\n\t\"PrimaryCriteria\" : {\n\t\t\"CriteriaList\" : [\n\t\t\t{\n\t\t\t\t\"ConditionOccurrence\" : {\n\t\t\t\t\t\"CodesetId\" : 0,\n\t\t\t\t\t\"ConditionTypeExclude\" : false\n\t\t\t\t}\n\t\t\t}\n\t\t],\n\t\t\"ObservationWindow\" : {\n\t\t\t\"PriorDays\" : 0,\n\t\t\t\"PostDays\" : 0\n\t\t},\n\t\t\"PrimaryCriteriaLimit\" : {\n\t\t\t\"Type\" : \"All\"\n\t\t}\n\t},\n\t\"ConceptSets\" : [\n\t\t{\n\t\t\t\"id\" : 0,\n\t\t\t\"name\" : \"PASC multisystem inflammatory syndrome\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"items\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 703578,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Multisystem inflammatory syndrome (MIS)\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"OMOP5042964\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Condition\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"OMOP Extension\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t}\n\t],\n\t\"QualifiedLimit\" : {\n\t\t\"Type\" : \"First\"\n\t},\n\t\"ExpressionLimit\" : {\n\t\t\"Type\" : \"All\"\n\t},\n\t\"InclusionRules\" : [],\n\t\"EndStrategy\" : {\n\t\t\"DateOffset\" : {\n\t\t\t\"DateField\" : \"StartDate\",\n\t\t\t\"Offset\" : 0\n\t\t}\n\t},\n\t\"CensoringCriteria\" : [],\n\t\"CollapseSettings\" : {\n\t\t\"CollapseType\" : \"ERA\",\n\t\t\"EraPad\" : 0\n\t},\n\t\"CensorWindow\" : {}\n}", "{\n\t\"cdmVersionRange\" : \">=5.0.0\",\n\t\"PrimaryCriteria\" : {\n\t\t\"CriteriaList\" : [\n\t\t\t{\n\t\t\t\t\"ConditionOccurrence\" : {\n\t\t\t\t\t\"CodesetId\" : 0,\n\t\t\t\t\t\"ConditionTypeExclude\" : false\n\t\t\t\t}\n\t\t\t}\n\t\t],\n\t\t\"ObservationWindow\" : {\n\t\t\t\"PriorDays\" : 0,\n\t\t\t\"PostDays\" : 0\n\t\t},\n\t\t\"PrimaryCriteriaLimit\" : {\n\t\t\t\"Type\" : \"All\"\n\t\t}\n\t},\n\t\"ConceptSets\" : [\n\t\t{\n\t\t\t\"id\" : 0,\n\t\t\t\"name\" : \"PASC addison disease\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"items\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 4160059,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Primary adrenocortical insufficiency\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"373662000\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Condition\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t}\n\t],\n\t\"QualifiedLimit\" : {\n\t\t\"Type\" : \"First\"\n\t},\n\t\"ExpressionLimit\" : {\n\t\t\"Type\" : \"All\"\n\t},\n\t\"InclusionRules\" : [],\n\t\"EndStrategy\" : {\n\t\t\"DateOffset\" : {\n\t\t\t\"DateField\" : \"StartDate\",\n\t\t\t\"Offset\" : 0\n\t\t}\n\t},\n\t\"CensoringCriteria\" : [],\n\t\"CollapseSettings\" : {\n\t\t\"CollapseType\" : \"ERA\",\n\t\t\"EraPad\" : 0\n\t},\n\t\"CensorWindow\" : {}\n}"],
+    "sql": ["CREATE TABLE #Codesets (\r\n  codeset_id int NOT NULL,\r\n  concept_id bigint NOT NULL\r\n)\r\n;\r\n\r\nINSERT INTO #Codesets (codeset_id, concept_id)\nSELECT 1 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM\r\n( \r\n  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (37310282,756055,756084,37310282)\r\nUNION  select c.concept_id\r\n  from @vocabulary_database_schema.CONCEPT c\r\n  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id\r\n  and ca.ancestor_concept_id in (37310282,756055,756084)\r\n  and c.invalid_reason is null\r\n\r\n) I\r\n) C UNION ALL \nSELECT 2 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM\r\n( \r\n  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (756055,704058,704059)\r\nUNION  select c.concept_id\r\n  from @vocabulary_database_schema.CONCEPT c\r\n  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id\r\n  and ca.ancestor_concept_id in (756055,704058,704059)\r\n  and c.invalid_reason is null\r\n\r\n) I\r\nLEFT JOIN\r\n(\r\n  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (37310258)\r\nUNION  select c.concept_id\r\n  from @vocabulary_database_schema.CONCEPT c\r\n  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id\r\n  and ca.ancestor_concept_id in (37310258)\r\n  and c.invalid_reason is null\r\n\r\n) E ON I.concept_id = E.concept_id\r\nWHERE E.concept_id is null\r\n) C UNION ALL \nSELECT 5 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM\r\n( \r\n  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (262,9201,9203,262,8870,9202,8756)\r\nUNION  select c.concept_id\r\n  from @vocabulary_database_schema.CONCEPT c\r\n  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id\r\n  and ca.ancestor_concept_id in (262,9201,9203,262,8870,9202,8756)\r\n  and c.invalid_reason is null\r\n\r\n) I\r\n) C UNION ALL \nSELECT 6 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM\r\n( \r\n  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (37310281,37310281)\r\nUNION  select c.concept_id\r\n  from @vocabulary_database_schema.CONCEPT c\r\n  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id\r\n  and ca.ancestor_concept_id in (37310281,37310281)\r\n  and c.invalid_reason is null\r\n\r\n) I\r\n) C\r\n;\r\n\r\nwith primary_events (event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id) as\r\n(\r\n-- Begin Primary Events\r\nselect P.ordinal as event_id, P.person_id, P.start_date, P.end_date, op_start_date, op_end_date, cast(P.visit_occurrence_id as bigint) as visit_occurrence_id\r\nFROM\r\n(\r\n  select E.person_id, E.start_date, E.end_date,\r\n         row_number() OVER (PARTITION BY E.person_id ORDER BY E.sort_date ASC) ordinal,\r\n         OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date, cast(E.visit_occurrence_id as bigint) as visit_occurrence_id\r\n  FROM \r\n  (\r\n  -- Begin Measurement Criteria\r\nselect C.person_id, C.measurement_id as event_id, C.measurement_date as start_date, DATEADD(d,1,C.measurement_date) as END_DATE,\r\n       C.visit_occurrence_id, C.measurement_date as sort_date\r\nfrom \r\n(\r\n  select m.* \r\n  FROM @cdm_database_schema.MEASUREMENT m\r\nJOIN #Codesets cs on (m.measurement_concept_id = cs.concept_id and cs.codeset_id = 2)\r\n) C\r\nJOIN @cdm_database_schema.PERSON P on C.person_id = P.person_id\r\nWHERE (C.measurement_date >= DATEFROMPARTS(2020, 3, 1) and C.measurement_date <= DATEFROMPARTS(2021, 10, 31))\nAND C.value_as_concept_id in (4181412,9191,4126681,45879438,45884084,45877985)\nAND YEAR(C.measurement_date) - P.year_of_birth < 21\r\n-- End Measurement Criteria\r\n\nUNION ALL\nselect PE.person_id, PE.event_id, PE.start_date, PE.end_date, PE.visit_occurrence_id, PE.sort_date FROM (\n-- Begin Measurement Criteria\r\nselect C.person_id, C.measurement_id as event_id, C.measurement_date as start_date, DATEADD(d,1,C.measurement_date) as END_DATE,\r\n       C.visit_occurrence_id, C.measurement_date as sort_date\r\nfrom \r\n(\r\n  select m.* \r\n  FROM @cdm_database_schema.MEASUREMENT m\r\nJOIN #Codesets cs on (m.measurement_concept_id = cs.concept_id and cs.codeset_id = 2)\r\n) C\r\nJOIN @cdm_database_schema.PERSON P on C.person_id = P.person_id\r\nWHERE (C.measurement_date >= DATEFROMPARTS(2020, 3, 1) and C.measurement_date <= DATEFROMPARTS(2021, 10, 31))\nAND C.value_as_concept_id in (9189,9190,4132135,45884086,37079494,45878583,45880296,3661867)\nAND YEAR(C.measurement_date) - P.year_of_birth < 21\r\n-- End Measurement Criteria\r\n\n) PE\nJOIN (\n-- Begin Criteria Group\r\nselect 0 as index_id, person_id, event_id\r\nFROM\r\n(\r\n  select E.person_id, E.event_id \r\n  FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date\r\nFROM (-- Begin Measurement Criteria\r\nselect C.person_id, C.measurement_id as event_id, C.measurement_date as start_date, DATEADD(d,1,C.measurement_date) as END_DATE,\r\n       C.visit_occurrence_id, C.measurement_date as sort_date\r\nfrom \r\n(\r\n  select m.* \r\n  FROM @cdm_database_schema.MEASUREMENT m\r\nJOIN #Codesets cs on (m.measurement_concept_id = cs.concept_id and cs.codeset_id = 2)\r\n) C\r\nJOIN @cdm_database_schema.PERSON P on C.person_id = P.person_id\r\nWHERE (C.measurement_date >= DATEFROMPARTS(2020, 3, 1) and C.measurement_date <= DATEFROMPARTS(2021, 10, 31))\nAND C.value_as_concept_id in (9189,9190,4132135,45884086,37079494,45878583,45880296,3661867)\nAND YEAR(C.measurement_date) - P.year_of_birth < 21\r\n-- End Measurement Criteria\r\n) Q\r\nJOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id \r\n  and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date\r\n) E\r\n  INNER JOIN\r\n  (\r\n    -- Begin Correlated Criteria\r\nselect 0 as index_id, p.person_id, p.event_id\r\nfrom (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date\r\nFROM (-- Begin Measurement Criteria\r\nselect C.person_id, C.measurement_id as event_id, C.measurement_date as start_date, DATEADD(d,1,C.measurement_date) as END_DATE,\r\n       C.visit_occurrence_id, C.measurement_date as sort_date\r\nfrom \r\n(\r\n  select m.* \r\n  FROM @cdm_database_schema.MEASUREMENT m\r\nJOIN #Codesets cs on (m.measurement_concept_id = cs.concept_id and cs.codeset_id = 2)\r\n) C\r\nJOIN @cdm_database_schema.PERSON P on C.person_id = P.person_id\r\nWHERE (C.measurement_date >= DATEFROMPARTS(2020, 3, 1) and C.measurement_date <= DATEFROMPARTS(2021, 10, 31))\nAND C.value_as_concept_id in (9189,9190,4132135,45884086,37079494,45878583,45880296,3661867)\nAND YEAR(C.measurement_date) - P.year_of_birth < 21\r\n-- End Measurement Criteria\r\n) Q\r\nJOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id \r\n  and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date\r\n) p\r\nLEFT JOIN (\r\nSELECT p.person_id, p.event_id \r\nFROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date\r\nFROM (-- Begin Measurement Criteria\r\nselect C.person_id, C.measurement_id as event_id, C.measurement_date as start_date, DATEADD(d,1,C.measurement_date) as END_DATE,\r\n       C.visit_occurrence_id, C.measurement_date as sort_date\r\nfrom \r\n(\r\n  select m.* \r\n  FROM @cdm_database_schema.MEASUREMENT m\r\nJOIN #Codesets cs on (m.measurement_concept_id = cs.concept_id and cs.codeset_id = 2)\r\n) C\r\nJOIN @cdm_database_schema.PERSON P on C.person_id = P.person_id\r\nWHERE (C.measurement_date >= DATEFROMPARTS(2020, 3, 1) and C.measurement_date <= DATEFROMPARTS(2021, 10, 31))\nAND C.value_as_concept_id in (9189,9190,4132135,45884086,37079494,45878583,45880296,3661867)\nAND YEAR(C.measurement_date) - P.year_of_birth < 21\r\n-- End Measurement Criteria\r\n) Q\r\nJOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id \r\n  and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date\r\n) P\r\nJOIN (\r\n  -- Begin Measurement Criteria\r\nselect C.person_id, C.measurement_id as event_id, C.measurement_date as start_date, DATEADD(d,1,C.measurement_date) as END_DATE,\r\n       C.visit_occurrence_id, C.measurement_date as sort_date\r\nfrom \r\n(\r\n  select m.* \r\n  FROM @cdm_database_schema.MEASUREMENT m\r\nJOIN #Codesets cs on (m.measurement_concept_id = cs.concept_id and cs.codeset_id = 2)\r\n) C\r\n\r\nWHERE (C.measurement_date >= DATEFROMPARTS(2020, 3, 1) and C.measurement_date <= DATEFROMPARTS(2021, 10, 31))\nAND C.value_as_concept_id in (4181412,9191,4126681,45879438,45884084,45877985)\r\n-- End Measurement Criteria\r\n\r\n) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE ) cc on p.person_id = cc.person_id and p.event_id = cc.event_id\r\nGROUP BY p.person_id, p.event_id\r\nHAVING COUNT(cc.event_id) = 0\r\n-- End Correlated Criteria\r\n\r\n  ) CQ on E.person_id = CQ.person_id and E.event_id = CQ.event_id\r\n  GROUP BY E.person_id, E.event_id\r\n  HAVING COUNT(index_id) = 1\r\n) G\r\n-- End Criteria Group\r\n) AC on AC.person_id = pe.person_id and AC.event_id = pe.event_id\n\r\n  ) E\r\n\tJOIN @cdm_database_schema.observation_period OP on E.person_id = OP.person_id and E.start_date >=  OP.observation_period_start_date and E.start_date <= op.observation_period_end_date\r\n  WHERE DATEADD(day,0,OP.OBSERVATION_PERIOD_START_DATE) <= E.START_DATE AND DATEADD(day,0,E.START_DATE) <= OP.OBSERVATION_PERIOD_END_DATE\r\n) P\r\nWHERE P.ordinal = 1\r\n-- End Primary Events\r\n\r\n)\r\nSELECT event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id\r\nINTO #qualified_events\r\nFROM \r\n(\r\n  select pe.event_id, pe.person_id, pe.start_date, pe.end_date, pe.op_start_date, pe.op_end_date, row_number() over (partition by pe.person_id order by pe.start_date ASC) as ordinal, cast(pe.visit_occurrence_id as bigint) as visit_occurrence_id\r\n  FROM primary_events pe\r\n  \r\n) QE\r\n\r\n;\r\n\r\n--- Inclusion Rule Inserts\r\n\r\nselect 0 as inclusion_rule_id, person_id, event_id\r\nINTO #Inclusion_0\r\nFROM \r\n(\r\n  select pe.person_id, pe.event_id\r\n  FROM #qualified_events pe\r\n  \nJOIN (\n-- Begin Criteria Group\r\nselect 0 as index_id, person_id, event_id\r\nFROM\r\n(\r\n  select E.person_id, E.event_id \r\n  FROM #qualified_events E\r\n  INNER JOIN\r\n  (\r\n    -- Begin Correlated Criteria\r\nselect 0 as index_id, cc.person_id, cc.event_id\r\nfrom (SELECT p.person_id, p.event_id \r\nFROM #qualified_events P\r\nJOIN (\r\n  -- Begin Observation Period Criteria\r\nselect C.person_id, C.observation_period_id as event_id, C.observation_period_start_date as start_date, C.observation_period_end_date as end_date,\r\n       CAST(NULL as bigint) as visit_occurrence_id, C.observation_period_start_date as sort_date\r\n\r\nfrom \r\n(\r\n        select op.*, row_number() over (PARTITION BY op.person_id ORDER BY op.observation_period_start_date) as ordinal\r\n        FROM @cdm_database_schema.OBSERVATION_PERIOD op\r\n) C\r\n\r\n\r\n-- End Observation Period Criteria\r\n\r\n) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,-180,P.START_DATE) AND A.END_DATE >= DATEADD(day,0,P.START_DATE) AND A.END_DATE <= P.OP_END_DATE ) cc \r\nGROUP BY cc.person_id, cc.event_id\r\nHAVING COUNT(cc.event_id) >= 1\r\n-- End Correlated Criteria\r\n\r\n  ) CQ on E.person_id = CQ.person_id and E.event_id = CQ.event_id\r\n  GROUP BY E.person_id, E.event_id\r\n  HAVING COUNT(index_id) = 1\r\n) G\r\n-- End Criteria Group\r\n) AC on AC.person_id = pe.person_id AND AC.event_id = pe.event_id\r\n) Results\r\n;\r\n\nselect 1 as inclusion_rule_id, person_id, event_id\r\nINTO #Inclusion_1\r\nFROM \r\n(\r\n  select pe.person_id, pe.event_id\r\n  FROM #qualified_events pe\r\n  \nJOIN (\n-- Begin Criteria Group\r\nselect 0 as index_id, person_id, event_id\r\nFROM\r\n(\r\n  select E.person_id, E.event_id \r\n  FROM #qualified_events E\r\n  INNER JOIN\r\n  (\r\n    -- Begin Correlated Criteria\r\nselect 0 as index_id, cc.person_id, cc.event_id\r\nfrom (SELECT p.person_id, p.event_id \r\nFROM #qualified_events P\r\nJOIN (\r\n  -- Begin Visit Occurrence Criteria\r\nselect C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,\r\n       C.visit_occurrence_id, C.visit_start_date as sort_date\r\nfrom \r\n(\r\n  select vo.* \r\n  FROM @cdm_database_schema.VISIT_OCCURRENCE vo\r\n\r\n) C\r\n\r\n\r\n-- End Visit Occurrence Criteria\r\n\r\n) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,0,P.START_DATE) AND A.END_DATE >= DATEADD(day,0,P.START_DATE) AND A.END_DATE <= P.OP_END_DATE ) cc \r\nGROUP BY cc.person_id, cc.event_id\r\nHAVING COUNT(cc.event_id) >= 1\r\n-- End Correlated Criteria\r\n\r\n  ) CQ on E.person_id = CQ.person_id and E.event_id = CQ.event_id\r\n  GROUP BY E.person_id, E.event_id\r\n  HAVING COUNT(index_id) = 1\r\n) G\r\n-- End Criteria Group\r\n) AC on AC.person_id = pe.person_id AND AC.event_id = pe.event_id\r\n) Results\r\n;\r\n\nSELECT inclusion_rule_id, person_id, event_id\nINTO #inclusion_events\nFROM (select inclusion_rule_id, person_id, event_id from #Inclusion_0\nUNION ALL\nselect inclusion_rule_id, person_id, event_id from #Inclusion_1) I;\nTRUNCATE TABLE #Inclusion_0;\nDROP TABLE #Inclusion_0;\n\nTRUNCATE TABLE #Inclusion_1;\nDROP TABLE #Inclusion_1;\n\r\n\r\nwith cteIncludedEvents(event_id, person_id, start_date, end_date, op_start_date, op_end_date, ordinal) as\r\n(\r\n  SELECT event_id, person_id, start_date, end_date, op_start_date, op_end_date, row_number() over (partition by person_id order by start_date ASC) as ordinal\r\n  from\r\n  (\r\n    select Q.event_id, Q.person_id, Q.start_date, Q.end_date, Q.op_start_date, Q.op_end_date, SUM(coalesce(POWER(cast(2 as bigint), I.inclusion_rule_id), 0)) as inclusion_rule_mask\r\n    from #qualified_events Q\r\n    LEFT JOIN #inclusion_events I on I.person_id = Q.person_id and I.event_id = Q.event_id\r\n    GROUP BY Q.event_id, Q.person_id, Q.start_date, Q.end_date, Q.op_start_date, Q.op_end_date\r\n  ) MG -- matching groups\r\n\r\n  -- the matching group with all bits set ( POWER(2,# of inclusion rules) - 1 = inclusion_rule_mask\r\n  WHERE (MG.inclusion_rule_mask = POWER(cast(2 as bigint),2)-1)\r\n\r\n)\r\nselect event_id, person_id, start_date, end_date, op_start_date, op_end_date\r\ninto #included_events\r\nFROM cteIncludedEvents Results\r\nWHERE Results.ordinal = 1\r\n;\r\n\r\n-- date offset strategy\r\n\r\nselect event_id, person_id, \r\n  case when DATEADD(day,0,end_date) > op_end_date then op_end_date else DATEADD(day,0,end_date) end as end_date\r\nINTO #strategy_ends\r\nfrom #included_events;\r\n\r\n\r\n-- generate cohort periods into #final_cohort\r\nwith cohort_ends (event_id, person_id, end_date) as\r\n(\r\n\t-- cohort exit dates\r\n  -- End Date Strategy\nSELECT event_id, person_id, end_date from #strategy_ends\n\r\n),\r\nfirst_ends (person_id, start_date, end_date) as\r\n(\r\n\tselect F.person_id, F.start_date, F.end_date\r\n\tFROM (\r\n\t  select I.event_id, I.person_id, I.start_date, E.end_date, row_number() over (partition by I.person_id, I.event_id order by E.end_date) as ordinal \r\n\t  from #included_events I\r\n\t  join cohort_ends E on I.event_id = E.event_id and I.person_id = E.person_id and E.end_date >= I.start_date\r\n\t) F\r\n\tWHERE F.ordinal = 1\r\n)\r\nselect person_id, start_date, end_date\r\nINTO #cohort_rows\r\nfrom first_ends;\r\n\r\nwith cteEndDates (person_id, end_date) AS -- the magic\r\n(\t\r\n\tSELECT\r\n\t\tperson_id\r\n\t\t, DATEADD(day,-1 * 90, event_date)  as end_date\r\n\tFROM\r\n\t(\r\n\t\tSELECT\r\n\t\t\tperson_id\r\n\t\t\t, event_date\r\n\t\t\t, event_type\r\n\t\t\t, MAX(start_ordinal) OVER (PARTITION BY person_id ORDER BY event_date, event_type ROWS UNBOUNDED PRECEDING) AS start_ordinal \r\n\t\t\t, ROW_NUMBER() OVER (PARTITION BY person_id ORDER BY event_date, event_type) AS overall_ord\r\n\t\tFROM\r\n\t\t(\r\n\t\t\tSELECT\r\n\t\t\t\tperson_id\r\n\t\t\t\t, start_date AS event_date\r\n\t\t\t\t, -1 AS event_type\r\n\t\t\t\t, ROW_NUMBER() OVER (PARTITION BY person_id ORDER BY start_date) AS start_ordinal\r\n\t\t\tFROM #cohort_rows\r\n\t\t\r\n\t\t\tUNION ALL\r\n\t\t\r\n\r\n\t\t\tSELECT\r\n\t\t\t\tperson_id\r\n\t\t\t\t, DATEADD(day,90,end_date) as end_date\r\n\t\t\t\t, 1 AS event_type\r\n\t\t\t\t, NULL\r\n\t\t\tFROM #cohort_rows\r\n\t\t) RAWDATA\r\n\t) e\r\n\tWHERE (2 * e.start_ordinal) - e.overall_ord = 0\r\n),\r\ncteEnds (person_id, start_date, end_date) AS\r\n(\r\n\tSELECT\r\n\t\t c.person_id\r\n\t\t, c.start_date\r\n\t\t, MIN(e.end_date) AS end_date\r\n\tFROM #cohort_rows c\r\n\tJOIN cteEndDates e ON c.person_id = e.person_id AND e.end_date >= c.start_date\r\n\tGROUP BY c.person_id, c.start_date\r\n)\r\nselect person_id, min(start_date) as start_date, end_date\r\ninto #final_cohort\r\nfrom cteEnds\r\ngroup by person_id, end_date\r\n;\r\n\r\nDELETE FROM @target_database_schema.@target_cohort_table where cohort_definition_id = @target_cohort_id;\r\nINSERT INTO @target_database_schema.@target_cohort_table (cohort_definition_id, subject_id, cohort_start_date, cohort_end_date)\r\nselect @target_cohort_id as cohort_definition_id, person_id, start_date, end_date \nFROM #final_cohort CO\r\n;\r\n\r\n\r\n\r\n\r\nTRUNCATE TABLE #strategy_ends;\nDROP TABLE #strategy_ends;\n\r\n\r\nTRUNCATE TABLE #cohort_rows;\r\nDROP TABLE #cohort_rows;\r\n\r\nTRUNCATE TABLE #final_cohort;\r\nDROP TABLE #final_cohort;\r\n\r\nTRUNCATE TABLE #inclusion_events;\r\nDROP TABLE #inclusion_events;\r\n\r\nTRUNCATE TABLE #qualified_events;\r\nDROP TABLE #qualified_events;\r\n\r\nTRUNCATE TABLE #included_events;\r\nDROP TABLE #included_events;\r\n\r\nTRUNCATE TABLE #Codesets;\r\nDROP TABLE #Codesets;\r\n", "CREATE TABLE #Codesets (\r\n  codeset_id int NOT NULL,\r\n  concept_id bigint NOT NULL\r\n)\r\n;\r\n\r\nINSERT INTO #Codesets (codeset_id, concept_id)\nSELECT 0 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM\r\n( \r\n  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (140173,4031164,4099746)\r\n\r\n) I\r\n) C\r\n;\r\n\r\nwith primary_events (event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id) as\r\n(\r\n-- Begin Primary Events\r\nselect P.ordinal as event_id, P.person_id, P.start_date, P.end_date, op_start_date, op_end_date, cast(P.visit_occurrence_id as bigint) as visit_occurrence_id\r\nFROM\r\n(\r\n  select E.person_id, E.start_date, E.end_date,\r\n         row_number() OVER (PARTITION BY E.person_id ORDER BY E.sort_date ASC) ordinal,\r\n         OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date, cast(E.visit_occurrence_id as bigint) as visit_occurrence_id\r\n  FROM \r\n  (\r\n  -- Begin Condition Occurrence Criteria\r\nSELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,\r\n  C.visit_occurrence_id, C.condition_start_date as sort_date\r\nFROM \r\n(\r\n  SELECT co.* \r\n  FROM @cdm_database_schema.CONDITION_OCCURRENCE co\r\n  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 0)\r\n) C\r\n\r\n\r\n-- End Condition Occurrence Criteria\r\n\r\n  ) E\r\n\tJOIN @cdm_database_schema.observation_period OP on E.person_id = OP.person_id and E.start_date >=  OP.observation_period_start_date and E.start_date <= op.observation_period_end_date\r\n  WHERE DATEADD(day,0,OP.OBSERVATION_PERIOD_START_DATE) <= E.START_DATE AND DATEADD(day,0,E.START_DATE) <= OP.OBSERVATION_PERIOD_END_DATE\r\n) P\r\n\r\n-- End Primary Events\r\n\r\n)\r\nSELECT event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id\r\nINTO #qualified_events\r\nFROM \r\n(\r\n  select pe.event_id, pe.person_id, pe.start_date, pe.end_date, pe.op_start_date, pe.op_end_date, row_number() over (partition by pe.person_id order by pe.start_date ASC) as ordinal, cast(pe.visit_occurrence_id as bigint) as visit_occurrence_id\r\n  FROM primary_events pe\r\n  \r\n) QE\r\n\r\n;\r\n\r\n--- Inclusion Rule Inserts\r\n\r\ncreate table #inclusion_events (inclusion_rule_id bigint,\n\tperson_id bigint,\n\tevent_id bigint\n);\r\n\r\nwith cteIncludedEvents(event_id, person_id, start_date, end_date, op_start_date, op_end_date, ordinal) as\r\n(\r\n  SELECT event_id, person_id, start_date, end_date, op_start_date, op_end_date, row_number() over (partition by person_id order by start_date ASC) as ordinal\r\n  from\r\n  (\r\n    select Q.event_id, Q.person_id, Q.start_date, Q.end_date, Q.op_start_date, Q.op_end_date, SUM(coalesce(POWER(cast(2 as bigint), I.inclusion_rule_id), 0)) as inclusion_rule_mask\r\n    from #qualified_events Q\r\n    LEFT JOIN #inclusion_events I on I.person_id = Q.person_id and I.event_id = Q.event_id\r\n    GROUP BY Q.event_id, Q.person_id, Q.start_date, Q.end_date, Q.op_start_date, Q.op_end_date\r\n  ) MG -- matching groups\r\n\r\n)\r\nselect event_id, person_id, start_date, end_date, op_start_date, op_end_date\r\ninto #included_events\r\nFROM cteIncludedEvents Results\r\n\r\n;\r\n\r\n-- date offset strategy\r\n\r\nselect event_id, person_id, \r\n  case when DATEADD(day,0,start_date) > op_end_date then op_end_date else DATEADD(day,0,start_date) end as end_date\r\nINTO #strategy_ends\r\nfrom #included_events;\r\n\r\n\r\n-- generate cohort periods into #final_cohort\r\nwith cohort_ends (event_id, person_id, end_date) as\r\n(\r\n\t-- cohort exit dates\r\n  -- End Date Strategy\nSELECT event_id, person_id, end_date from #strategy_ends\n\r\n),\r\nfirst_ends (person_id, start_date, end_date) as\r\n(\r\n\tselect F.person_id, F.start_date, F.end_date\r\n\tFROM (\r\n\t  select I.event_id, I.person_id, I.start_date, E.end_date, row_number() over (partition by I.person_id, I.event_id order by E.end_date) as ordinal \r\n\t  from #included_events I\r\n\t  join cohort_ends E on I.event_id = E.event_id and I.person_id = E.person_id and E.end_date >= I.start_date\r\n\t) F\r\n\tWHERE F.ordinal = 1\r\n)\r\nselect person_id, start_date, end_date\r\nINTO #cohort_rows\r\nfrom first_ends;\r\n\r\nwith cteEndDates (person_id, end_date) AS -- the magic\r\n(\t\r\n\tSELECT\r\n\t\tperson_id\r\n\t\t, DATEADD(day,-1 * 0, event_date)  as end_date\r\n\tFROM\r\n\t(\r\n\t\tSELECT\r\n\t\t\tperson_id\r\n\t\t\t, event_date\r\n\t\t\t, event_type\r\n\t\t\t, MAX(start_ordinal) OVER (PARTITION BY person_id ORDER BY event_date, event_type ROWS UNBOUNDED PRECEDING) AS start_ordinal \r\n\t\t\t, ROW_NUMBER() OVER (PARTITION BY person_id ORDER BY event_date, event_type) AS overall_ord\r\n\t\tFROM\r\n\t\t(\r\n\t\t\tSELECT\r\n\t\t\t\tperson_id\r\n\t\t\t\t, start_date AS event_date\r\n\t\t\t\t, -1 AS event_type\r\n\t\t\t\t, ROW_NUMBER() OVER (PARTITION BY person_id ORDER BY start_date) AS start_ordinal\r\n\t\t\tFROM #cohort_rows\r\n\t\t\r\n\t\t\tUNION ALL\r\n\t\t\r\n\r\n\t\t\tSELECT\r\n\t\t\t\tperson_id\r\n\t\t\t\t, DATEADD(day,0,end_date) as end_date\r\n\t\t\t\t, 1 AS event_type\r\n\t\t\t\t, NULL\r\n\t\t\tFROM #cohort_rows\r\n\t\t) RAWDATA\r\n\t) e\r\n\tWHERE (2 * e.start_ordinal) - e.overall_ord = 0\r\n),\r\ncteEnds (person_id, start_date, end_date) AS\r\n(\r\n\tSELECT\r\n\t\t c.person_id\r\n\t\t, c.start_date\r\n\t\t, MIN(e.end_date) AS end_date\r\n\tFROM #cohort_rows c\r\n\tJOIN cteEndDates e ON c.person_id = e.person_id AND e.end_date >= c.start_date\r\n\tGROUP BY c.person_id, c.start_date\r\n)\r\nselect person_id, min(start_date) as start_date, end_date\r\ninto #final_cohort\r\nfrom cteEnds\r\ngroup by person_id, end_date\r\n;\r\n\r\nDELETE FROM @target_database_schema.@target_cohort_table where cohort_definition_id = @target_cohort_id;\r\nINSERT INTO @target_database_schema.@target_cohort_table (cohort_definition_id, subject_id, cohort_start_date, cohort_end_date)\r\nselect @target_cohort_id as cohort_definition_id, person_id, start_date, end_date \nFROM #final_cohort CO\r\n;\r\n\r\n\r\n\r\n\r\nTRUNCATE TABLE #strategy_ends;\nDROP TABLE #strategy_ends;\n\r\n\r\nTRUNCATE TABLE #cohort_rows;\r\nDROP TABLE #cohort_rows;\r\n\r\nTRUNCATE TABLE #final_cohort;\r\nDROP TABLE #final_cohort;\r\n\r\nTRUNCATE TABLE #inclusion_events;\r\nDROP TABLE #inclusion_events;\r\n\r\nTRUNCATE TABLE #qualified_events;\r\nDROP TABLE #qualified_events;\r\n\r\nTRUNCATE TABLE #included_events;\r\nDROP TABLE #included_events;\r\n\r\nTRUNCATE TABLE #Codesets;\r\nDROP TABLE #Codesets;\r\n", "CREATE TABLE #Codesets (\r\n  codeset_id int NOT NULL,\r\n  concept_id bigint NOT NULL\r\n)\r\n;\r\n\r\nINSERT INTO #Codesets (codeset_id, concept_id)\nSELECT 1 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM\r\n( \r\n  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (46270715,4185711)\r\nUNION  select c.concept_id\r\n  from @vocabulary_database_schema.CONCEPT c\r\n  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id\r\n  and ca.ancestor_concept_id in (46270715,4185711)\r\n  and c.invalid_reason is null\r\n\r\n) I\r\n) C\r\n;\r\n\r\nwith primary_events (event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id) as\r\n(\r\n-- Begin Primary Events\r\nselect P.ordinal as event_id, P.person_id, P.start_date, P.end_date, op_start_date, op_end_date, cast(P.visit_occurrence_id as bigint) as visit_occurrence_id\r\nFROM\r\n(\r\n  select E.person_id, E.start_date, E.end_date,\r\n         row_number() OVER (PARTITION BY E.person_id ORDER BY E.sort_date ASC) ordinal,\r\n         OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date, cast(E.visit_occurrence_id as bigint) as visit_occurrence_id\r\n  FROM \r\n  (\r\n  -- Begin Condition Occurrence Criteria\r\nSELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,\r\n  C.visit_occurrence_id, C.condition_start_date as sort_date\r\nFROM \r\n(\r\n  SELECT co.* \r\n  FROM @cdm_database_schema.CONDITION_OCCURRENCE co\r\n  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 1)\r\n) C\r\n\r\n\r\n-- End Condition Occurrence Criteria\r\n\r\n  ) E\r\n\tJOIN @cdm_database_schema.observation_period OP on E.person_id = OP.person_id and E.start_date >=  OP.observation_period_start_date and E.start_date <= op.observation_period_end_date\r\n  WHERE DATEADD(day,0,OP.OBSERVATION_PERIOD_START_DATE) <= E.START_DATE AND DATEADD(day,0,E.START_DATE) <= OP.OBSERVATION_PERIOD_END_DATE\r\n) P\r\n\r\n-- End Primary Events\r\n\r\n)\r\nSELECT event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id\r\nINTO #qualified_events\r\nFROM \r\n(\r\n  select pe.event_id, pe.person_id, pe.start_date, pe.end_date, pe.op_start_date, pe.op_end_date, row_number() over (partition by pe.person_id order by pe.start_date ASC) as ordinal, cast(pe.visit_occurrence_id as bigint) as visit_occurrence_id\r\n  FROM primary_events pe\r\n  \r\n) QE\r\n\r\n;\r\n\r\n--- Inclusion Rule Inserts\r\n\r\ncreate table #inclusion_events (inclusion_rule_id bigint,\n\tperson_id bigint,\n\tevent_id bigint\n);\r\n\r\nwith cteIncludedEvents(event_id, person_id, start_date, end_date, op_start_date, op_end_date, ordinal) as\r\n(\r\n  SELECT event_id, person_id, start_date, end_date, op_start_date, op_end_date, row_number() over (partition by person_id order by start_date ASC) as ordinal\r\n  from\r\n  (\r\n    select Q.event_id, Q.person_id, Q.start_date, Q.end_date, Q.op_start_date, Q.op_end_date, SUM(coalesce(POWER(cast(2 as bigint), I.inclusion_rule_id), 0)) as inclusion_rule_mask\r\n    from #qualified_events Q\r\n    LEFT JOIN #inclusion_events I on I.person_id = Q.person_id and I.event_id = Q.event_id\r\n    GROUP BY Q.event_id, Q.person_id, Q.start_date, Q.end_date, Q.op_start_date, Q.op_end_date\r\n  ) MG -- matching groups\r\n\r\n)\r\nselect event_id, person_id, start_date, end_date, op_start_date, op_end_date\r\ninto #included_events\r\nFROM cteIncludedEvents Results\r\n\r\n;\r\n\r\n-- date offset strategy\r\n\r\nselect event_id, person_id, \r\n  case when DATEADD(day,0,start_date) > op_end_date then op_end_date else DATEADD(day,0,start_date) end as end_date\r\nINTO #strategy_ends\r\nfrom #included_events;\r\n\r\n\r\n-- generate cohort periods into #final_cohort\r\nwith cohort_ends (event_id, person_id, end_date) as\r\n(\r\n\t-- cohort exit dates\r\n  -- End Date Strategy\nSELECT event_id, person_id, end_date from #strategy_ends\n\r\n),\r\nfirst_ends (person_id, start_date, end_date) as\r\n(\r\n\tselect F.person_id, F.start_date, F.end_date\r\n\tFROM (\r\n\t  select I.event_id, I.person_id, I.start_date, E.end_date, row_number() over (partition by I.person_id, I.event_id order by E.end_date) as ordinal \r\n\t  from #included_events I\r\n\t  join cohort_ends E on I.event_id = E.event_id and I.person_id = E.person_id and E.end_date >= I.start_date\r\n\t) F\r\n\tWHERE F.ordinal = 1\r\n)\r\nselect person_id, start_date, end_date\r\nINTO #cohort_rows\r\nfrom first_ends;\r\n\r\nwith cteEndDates (person_id, end_date) AS -- the magic\r\n(\t\r\n\tSELECT\r\n\t\tperson_id\r\n\t\t, DATEADD(day,-1 * 0, event_date)  as end_date\r\n\tFROM\r\n\t(\r\n\t\tSELECT\r\n\t\t\tperson_id\r\n\t\t\t, event_date\r\n\t\t\t, event_type\r\n\t\t\t, MAX(start_ordinal) OVER (PARTITION BY person_id ORDER BY event_date, event_type ROWS UNBOUNDED PRECEDING) AS start_ordinal \r\n\t\t\t, ROW_NUMBER() OVER (PARTITION BY person_id ORDER BY event_date, event_type) AS overall_ord\r\n\t\tFROM\r\n\t\t(\r\n\t\t\tSELECT\r\n\t\t\t\tperson_id\r\n\t\t\t\t, start_date AS event_date\r\n\t\t\t\t, -1 AS event_type\r\n\t\t\t\t, ROW_NUMBER() OVER (PARTITION BY person_id ORDER BY start_date) AS start_ordinal\r\n\t\t\tFROM #cohort_rows\r\n\t\t\r\n\t\t\tUNION ALL\r\n\t\t\r\n\r\n\t\t\tSELECT\r\n\t\t\t\tperson_id\r\n\t\t\t\t, DATEADD(day,0,end_date) as end_date\r\n\t\t\t\t, 1 AS event_type\r\n\t\t\t\t, NULL\r\n\t\t\tFROM #cohort_rows\r\n\t\t) RAWDATA\r\n\t) e\r\n\tWHERE (2 * e.start_ordinal) - e.overall_ord = 0\r\n),\r\ncteEnds (person_id, start_date, end_date) AS\r\n(\r\n\tSELECT\r\n\t\t c.person_id\r\n\t\t, c.start_date\r\n\t\t, MIN(e.end_date) AS end_date\r\n\tFROM #cohort_rows c\r\n\tJOIN cteEndDates e ON c.person_id = e.person_id AND e.end_date >= c.start_date\r\n\tGROUP BY c.person_id, c.start_date\r\n)\r\nselect person_id, min(start_date) as start_date, end_date\r\ninto #final_cohort\r\nfrom cteEnds\r\ngroup by person_id, end_date\r\n;\r\n\r\nDELETE FROM @target_database_schema.@target_cohort_table where cohort_definition_id = @target_cohort_id;\r\nINSERT INTO @target_database_schema.@target_cohort_table (cohort_definition_id, subject_id, cohort_start_date, cohort_end_date)\r\nselect @target_cohort_id as cohort_definition_id, person_id, start_date, end_date \nFROM #final_cohort CO\r\n;\r\n\r\n\r\n\r\n\r\nTRUNCATE TABLE #strategy_ends;\nDROP TABLE #strategy_ends;\n\r\n\r\nTRUNCATE TABLE #cohort_rows;\r\nDROP TABLE #cohort_rows;\r\n\r\nTRUNCATE TABLE #final_cohort;\r\nDROP TABLE #final_cohort;\r\n\r\nTRUNCATE TABLE #inclusion_events;\r\nDROP TABLE #inclusion_events;\r\n\r\nTRUNCATE TABLE #qualified_events;\r\nDROP TABLE #qualified_events;\r\n\r\nTRUNCATE TABLE #included_events;\r\nDROP TABLE #included_events;\r\n\r\nTRUNCATE TABLE #Codesets;\r\nDROP TABLE #Codesets;\r\n", "CREATE TABLE #Codesets (\r\n  codeset_id int NOT NULL,\r\n  concept_id bigint NOT NULL\r\n)\r\n;\r\n\r\nINSERT INTO #Codesets (codeset_id, concept_id)\nSELECT 0 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM\r\n( \r\n  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (43530714)\r\n\r\n) I\r\n) C\r\n;\r\n\r\nwith primary_events (event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id) as\r\n(\r\n-- Begin Primary Events\r\nselect P.ordinal as event_id, P.person_id, P.start_date, P.end_date, op_start_date, op_end_date, cast(P.visit_occurrence_id as bigint) as visit_occurrence_id\r\nFROM\r\n(\r\n  select E.person_id, E.start_date, E.end_date,\r\n         row_number() OVER (PARTITION BY E.person_id ORDER BY E.sort_date ASC) ordinal,\r\n         OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date, cast(E.visit_occurrence_id as bigint) as visit_occurrence_id\r\n  FROM \r\n  (\r\n  -- Begin Condition Occurrence Criteria\r\nSELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,\r\n  C.visit_occurrence_id, C.condition_start_date as sort_date\r\nFROM \r\n(\r\n  SELECT co.* \r\n  FROM @cdm_database_schema.CONDITION_OCCURRENCE co\r\n  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 0)\r\n) C\r\n\r\n\r\n-- End Condition Occurrence Criteria\r\n\r\n  ) E\r\n\tJOIN @cdm_database_schema.observation_period OP on E.person_id = OP.person_id and E.start_date >=  OP.observation_period_start_date and E.start_date <= op.observation_period_end_date\r\n  WHERE DATEADD(day,0,OP.OBSERVATION_PERIOD_START_DATE) <= E.START_DATE AND DATEADD(day,0,E.START_DATE) <= OP.OBSERVATION_PERIOD_END_DATE\r\n) P\r\n\r\n-- End Primary Events\r\n\r\n)\r\nSELECT event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id\r\nINTO #qualified_events\r\nFROM \r\n(\r\n  select pe.event_id, pe.person_id, pe.start_date, pe.end_date, pe.op_start_date, pe.op_end_date, row_number() over (partition by pe.person_id order by pe.start_date ASC) as ordinal, cast(pe.visit_occurrence_id as bigint) as visit_occurrence_id\r\n  FROM primary_events pe\r\n  \r\n) QE\r\n\r\n;\r\n\r\n--- Inclusion Rule Inserts\r\n\r\ncreate table #inclusion_events (inclusion_rule_id bigint,\n\tperson_id bigint,\n\tevent_id bigint\n);\r\n\r\nwith cteIncludedEvents(event_id, person_id, start_date, end_date, op_start_date, op_end_date, ordinal) as\r\n(\r\n  SELECT event_id, person_id, start_date, end_date, op_start_date, op_end_date, row_number() over (partition by person_id order by start_date ASC) as ordinal\r\n  from\r\n  (\r\n    select Q.event_id, Q.person_id, Q.start_date, Q.end_date, Q.op_start_date, Q.op_end_date, SUM(coalesce(POWER(cast(2 as bigint), I.inclusion_rule_id), 0)) as inclusion_rule_mask\r\n    from #qualified_events Q\r\n    LEFT JOIN #inclusion_events I on I.person_id = Q.person_id and I.event_id = Q.event_id\r\n    GROUP BY Q.event_id, Q.person_id, Q.start_date, Q.end_date, Q.op_start_date, Q.op_end_date\r\n  ) MG -- matching groups\r\n\r\n)\r\nselect event_id, person_id, start_date, end_date, op_start_date, op_end_date\r\ninto #included_events\r\nFROM cteIncludedEvents Results\r\n\r\n;\r\n\r\n-- date offset strategy\r\n\r\nselect event_id, person_id, \r\n  case when DATEADD(day,0,start_date) > op_end_date then op_end_date else DATEADD(day,0,start_date) end as end_date\r\nINTO #strategy_ends\r\nfrom #included_events;\r\n\r\n\r\n-- generate cohort periods into #final_cohort\r\nwith cohort_ends (event_id, person_id, end_date) as\r\n(\r\n\t-- cohort exit dates\r\n  -- End Date Strategy\nSELECT event_id, person_id, end_date from #strategy_ends\n\r\n),\r\nfirst_ends (person_id, start_date, end_date) as\r\n(\r\n\tselect F.person_id, F.start_date, F.end_date\r\n\tFROM (\r\n\t  select I.event_id, I.person_id, I.start_date, E.end_date, row_number() over (partition by I.person_id, I.event_id order by E.end_date) as ordinal \r\n\t  from #included_events I\r\n\t  join cohort_ends E on I.event_id = E.event_id and I.person_id = E.person_id and E.end_date >= I.start_date\r\n\t) F\r\n\tWHERE F.ordinal = 1\r\n)\r\nselect person_id, start_date, end_date\r\nINTO #cohort_rows\r\nfrom first_ends;\r\n\r\nwith cteEndDates (person_id, end_date) AS -- the magic\r\n(\t\r\n\tSELECT\r\n\t\tperson_id\r\n\t\t, DATEADD(day,-1 * 0, event_date)  as end_date\r\n\tFROM\r\n\t(\r\n\t\tSELECT\r\n\t\t\tperson_id\r\n\t\t\t, event_date\r\n\t\t\t, event_type\r\n\t\t\t, MAX(start_ordinal) OVER (PARTITION BY person_id ORDER BY event_date, event_type ROWS UNBOUNDED PRECEDING) AS start_ordinal \r\n\t\t\t, ROW_NUMBER() OVER (PARTITION BY person_id ORDER BY event_date, event_type) AS overall_ord\r\n\t\tFROM\r\n\t\t(\r\n\t\t\tSELECT\r\n\t\t\t\tperson_id\r\n\t\t\t\t, start_date AS event_date\r\n\t\t\t\t, -1 AS event_type\r\n\t\t\t\t, ROW_NUMBER() OVER (PARTITION BY person_id ORDER BY start_date) AS start_ordinal\r\n\t\t\tFROM #cohort_rows\r\n\t\t\r\n\t\t\tUNION ALL\r\n\t\t\r\n\r\n\t\t\tSELECT\r\n\t\t\t\tperson_id\r\n\t\t\t\t, DATEADD(day,0,end_date) as end_date\r\n\t\t\t\t, 1 AS event_type\r\n\t\t\t\t, NULL\r\n\t\t\tFROM #cohort_rows\r\n\t\t) RAWDATA\r\n\t) e\r\n\tWHERE (2 * e.start_ordinal) - e.overall_ord = 0\r\n),\r\ncteEnds (person_id, start_date, end_date) AS\r\n(\r\n\tSELECT\r\n\t\t c.person_id\r\n\t\t, c.start_date\r\n\t\t, MIN(e.end_date) AS end_date\r\n\tFROM #cohort_rows c\r\n\tJOIN cteEndDates e ON c.person_id = e.person_id AND e.end_date >= c.start_date\r\n\tGROUP BY c.person_id, c.start_date\r\n)\r\nselect person_id, min(start_date) as start_date, end_date\r\ninto #final_cohort\r\nfrom cteEnds\r\ngroup by person_id, end_date\r\n;\r\n\r\nDELETE FROM @target_database_schema.@target_cohort_table where cohort_definition_id = @target_cohort_id;\r\nINSERT INTO @target_database_schema.@target_cohort_table (cohort_definition_id, subject_id, cohort_start_date, cohort_end_date)\r\nselect @target_cohort_id as cohort_definition_id, person_id, start_date, end_date \nFROM #final_cohort CO\r\n;\r\n\r\n\r\n\r\n\r\nTRUNCATE TABLE #strategy_ends;\nDROP TABLE #strategy_ends;\n\r\n\r\nTRUNCATE TABLE #cohort_rows;\r\nDROP TABLE #cohort_rows;\r\n\r\nTRUNCATE TABLE #final_cohort;\r\nDROP TABLE #final_cohort;\r\n\r\nTRUNCATE TABLE #inclusion_events;\r\nDROP TABLE #inclusion_events;\r\n\r\nTRUNCATE TABLE #qualified_events;\r\nDROP TABLE #qualified_events;\r\n\r\nTRUNCATE TABLE #included_events;\r\nDROP TABLE #included_events;\r\n\r\nTRUNCATE TABLE #Codesets;\r\nDROP TABLE #Codesets;\r\n", "CREATE TABLE #Codesets (\r\n  codeset_id int NOT NULL,\r\n  concept_id bigint NOT NULL\r\n)\r\n;\r\n\r\nINSERT INTO #Codesets (codeset_id, concept_id)\nSELECT 0 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM\r\n( \r\n  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (703578)\r\nUNION  select c.concept_id\r\n  from @vocabulary_database_schema.CONCEPT c\r\n  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id\r\n  and ca.ancestor_concept_id in (703578)\r\n  and c.invalid_reason is null\r\n\r\n) I\r\n) C\r\n;\r\n\r\nwith primary_events (event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id) as\r\n(\r\n-- Begin Primary Events\r\nselect P.ordinal as event_id, P.person_id, P.start_date, P.end_date, op_start_date, op_end_date, cast(P.visit_occurrence_id as bigint) as visit_occurrence_id\r\nFROM\r\n(\r\n  select E.person_id, E.start_date, E.end_date,\r\n         row_number() OVER (PARTITION BY E.person_id ORDER BY E.sort_date ASC) ordinal,\r\n         OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date, cast(E.visit_occurrence_id as bigint) as visit_occurrence_id\r\n  FROM \r\n  (\r\n  -- Begin Condition Occurrence Criteria\r\nSELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,\r\n  C.visit_occurrence_id, C.condition_start_date as sort_date\r\nFROM \r\n(\r\n  SELECT co.* \r\n  FROM @cdm_database_schema.CONDITION_OCCURRENCE co\r\n  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 0)\r\n) C\r\n\r\n\r\n-- End Condition Occurrence Criteria\r\n\r\n  ) E\r\n\tJOIN @cdm_database_schema.observation_period OP on E.person_id = OP.person_id and E.start_date >=  OP.observation_period_start_date and E.start_date <= op.observation_period_end_date\r\n  WHERE DATEADD(day,0,OP.OBSERVATION_PERIOD_START_DATE) <= E.START_DATE AND DATEADD(day,0,E.START_DATE) <= OP.OBSERVATION_PERIOD_END_DATE\r\n) P\r\n\r\n-- End Primary Events\r\n\r\n)\r\nSELECT event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id\r\nINTO #qualified_events\r\nFROM \r\n(\r\n  select pe.event_id, pe.person_id, pe.start_date, pe.end_date, pe.op_start_date, pe.op_end_date, row_number() over (partition by pe.person_id order by pe.start_date ASC) as ordinal, cast(pe.visit_occurrence_id as bigint) as visit_occurrence_id\r\n  FROM primary_events pe\r\n  \r\n) QE\r\n\r\n;\r\n\r\n--- Inclusion Rule Inserts\r\n\r\ncreate table #inclusion_events (inclusion_rule_id bigint,\n\tperson_id bigint,\n\tevent_id bigint\n);\r\n\r\nwith cteIncludedEvents(event_id, person_id, start_date, end_date, op_start_date, op_end_date, ordinal) as\r\n(\r\n  SELECT event_id, person_id, start_date, end_date, op_start_date, op_end_date, row_number() over (partition by person_id order by start_date ASC) as ordinal\r\n  from\r\n  (\r\n    select Q.event_id, Q.person_id, Q.start_date, Q.end_date, Q.op_start_date, Q.op_end_date, SUM(coalesce(POWER(cast(2 as bigint), I.inclusion_rule_id), 0)) as inclusion_rule_mask\r\n    from #qualified_events Q\r\n    LEFT JOIN #inclusion_events I on I.person_id = Q.person_id and I.event_id = Q.event_id\r\n    GROUP BY Q.event_id, Q.person_id, Q.start_date, Q.end_date, Q.op_start_date, Q.op_end_date\r\n  ) MG -- matching groups\r\n\r\n)\r\nselect event_id, person_id, start_date, end_date, op_start_date, op_end_date\r\ninto #included_events\r\nFROM cteIncludedEvents Results\r\n\r\n;\r\n\r\n-- date offset strategy\r\n\r\nselect event_id, person_id, \r\n  case when DATEADD(day,0,start_date) > op_end_date then op_end_date else DATEADD(day,0,start_date) end as end_date\r\nINTO #strategy_ends\r\nfrom #included_events;\r\n\r\n\r\n-- generate cohort periods into #final_cohort\r\nwith cohort_ends (event_id, person_id, end_date) as\r\n(\r\n\t-- cohort exit dates\r\n  -- End Date Strategy\nSELECT event_id, person_id, end_date from #strategy_ends\n\r\n),\r\nfirst_ends (person_id, start_date, end_date) as\r\n(\r\n\tselect F.person_id, F.start_date, F.end_date\r\n\tFROM (\r\n\t  select I.event_id, I.person_id, I.start_date, E.end_date, row_number() over (partition by I.person_id, I.event_id order by E.end_date) as ordinal \r\n\t  from #included_events I\r\n\t  join cohort_ends E on I.event_id = E.event_id and I.person_id = E.person_id and E.end_date >= I.start_date\r\n\t) F\r\n\tWHERE F.ordinal = 1\r\n)\r\nselect person_id, start_date, end_date\r\nINTO #cohort_rows\r\nfrom first_ends;\r\n\r\nwith cteEndDates (person_id, end_date) AS -- the magic\r\n(\t\r\n\tSELECT\r\n\t\tperson_id\r\n\t\t, DATEADD(day,-1 * 0, event_date)  as end_date\r\n\tFROM\r\n\t(\r\n\t\tSELECT\r\n\t\t\tperson_id\r\n\t\t\t, event_date\r\n\t\t\t, event_type\r\n\t\t\t, MAX(start_ordinal) OVER (PARTITION BY person_id ORDER BY event_date, event_type ROWS UNBOUNDED PRECEDING) AS start_ordinal \r\n\t\t\t, ROW_NUMBER() OVER (PARTITION BY person_id ORDER BY event_date, event_type) AS overall_ord\r\n\t\tFROM\r\n\t\t(\r\n\t\t\tSELECT\r\n\t\t\t\tperson_id\r\n\t\t\t\t, start_date AS event_date\r\n\t\t\t\t, -1 AS event_type\r\n\t\t\t\t, ROW_NUMBER() OVER (PARTITION BY person_id ORDER BY start_date) AS start_ordinal\r\n\t\t\tFROM #cohort_rows\r\n\t\t\r\n\t\t\tUNION ALL\r\n\t\t\r\n\r\n\t\t\tSELECT\r\n\t\t\t\tperson_id\r\n\t\t\t\t, DATEADD(day,0,end_date) as end_date\r\n\t\t\t\t, 1 AS event_type\r\n\t\t\t\t, NULL\r\n\t\t\tFROM #cohort_rows\r\n\t\t) RAWDATA\r\n\t) e\r\n\tWHERE (2 * e.start_ordinal) - e.overall_ord = 0\r\n),\r\ncteEnds (person_id, start_date, end_date) AS\r\n(\r\n\tSELECT\r\n\t\t c.person_id\r\n\t\t, c.start_date\r\n\t\t, MIN(e.end_date) AS end_date\r\n\tFROM #cohort_rows c\r\n\tJOIN cteEndDates e ON c.person_id = e.person_id AND e.end_date >= c.start_date\r\n\tGROUP BY c.person_id, c.start_date\r\n)\r\nselect person_id, min(start_date) as start_date, end_date\r\ninto #final_cohort\r\nfrom cteEnds\r\ngroup by person_id, end_date\r\n;\r\n\r\nDELETE FROM @target_database_schema.@target_cohort_table where cohort_definition_id = @target_cohort_id;\r\nINSERT INTO @target_database_schema.@target_cohort_table (cohort_definition_id, subject_id, cohort_start_date, cohort_end_date)\r\nselect @target_cohort_id as cohort_definition_id, person_id, start_date, end_date \nFROM #final_cohort CO\r\n;\r\n\r\n\r\n\r\n\r\nTRUNCATE TABLE #strategy_ends;\nDROP TABLE #strategy_ends;\n\r\n\r\nTRUNCATE TABLE #cohort_rows;\r\nDROP TABLE #cohort_rows;\r\n\r\nTRUNCATE TABLE #final_cohort;\r\nDROP TABLE #final_cohort;\r\n\r\nTRUNCATE TABLE #inclusion_events;\r\nDROP TABLE #inclusion_events;\r\n\r\nTRUNCATE TABLE #qualified_events;\r\nDROP TABLE #qualified_events;\r\n\r\nTRUNCATE TABLE #included_events;\r\nDROP TABLE #included_events;\r\n\r\nTRUNCATE TABLE #Codesets;\r\nDROP TABLE #Codesets;\r\n", "CREATE TABLE #Codesets (\r\n  codeset_id int NOT NULL,\r\n  concept_id bigint NOT NULL\r\n)\r\n;\r\n\r\nINSERT INTO #Codesets (codeset_id, concept_id)\nSELECT 0 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM\r\n( \r\n  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4160059)\r\nUNION  select c.concept_id\r\n  from @vocabulary_database_schema.CONCEPT c\r\n  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id\r\n  and ca.ancestor_concept_id in (4160059)\r\n  and c.invalid_reason is null\r\n\r\n) I\r\n) C\r\n;\r\n\r\nwith primary_events (event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id) as\r\n(\r\n-- Begin Primary Events\r\nselect P.ordinal as event_id, P.person_id, P.start_date, P.end_date, op_start_date, op_end_date, cast(P.visit_occurrence_id as bigint) as visit_occurrence_id\r\nFROM\r\n(\r\n  select E.person_id, E.start_date, E.end_date,\r\n         row_number() OVER (PARTITION BY E.person_id ORDER BY E.sort_date ASC) ordinal,\r\n         OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date, cast(E.visit_occurrence_id as bigint) as visit_occurrence_id\r\n  FROM \r\n  (\r\n  -- Begin Condition Occurrence Criteria\r\nSELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,\r\n  C.visit_occurrence_id, C.condition_start_date as sort_date\r\nFROM \r\n(\r\n  SELECT co.* \r\n  FROM @cdm_database_schema.CONDITION_OCCURRENCE co\r\n  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 0)\r\n) C\r\n\r\n\r\n-- End Condition Occurrence Criteria\r\n\r\n  ) E\r\n\tJOIN @cdm_database_schema.observation_period OP on E.person_id = OP.person_id and E.start_date >=  OP.observation_period_start_date and E.start_date <= op.observation_period_end_date\r\n  WHERE DATEADD(day,0,OP.OBSERVATION_PERIOD_START_DATE) <= E.START_DATE AND DATEADD(day,0,E.START_DATE) <= OP.OBSERVATION_PERIOD_END_DATE\r\n) P\r\n\r\n-- End Primary Events\r\n\r\n)\r\nSELECT event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id\r\nINTO #qualified_events\r\nFROM \r\n(\r\n  select pe.event_id, pe.person_id, pe.start_date, pe.end_date, pe.op_start_date, pe.op_end_date, row_number() over (partition by pe.person_id order by pe.start_date ASC) as ordinal, cast(pe.visit_occurrence_id as bigint) as visit_occurrence_id\r\n  FROM primary_events pe\r\n  \r\n) QE\r\n\r\n;\r\n\r\n--- Inclusion Rule Inserts\r\n\r\ncreate table #inclusion_events (inclusion_rule_id bigint,\n\tperson_id bigint,\n\tevent_id bigint\n);\r\n\r\nwith cteIncludedEvents(event_id, person_id, start_date, end_date, op_start_date, op_end_date, ordinal) as\r\n(\r\n  SELECT event_id, person_id, start_date, end_date, op_start_date, op_end_date, row_number() over (partition by person_id order by start_date ASC) as ordinal\r\n  from\r\n  (\r\n    select Q.event_id, Q.person_id, Q.start_date, Q.end_date, Q.op_start_date, Q.op_end_date, SUM(coalesce(POWER(cast(2 as bigint), I.inclusion_rule_id), 0)) as inclusion_rule_mask\r\n    from #qualified_events Q\r\n    LEFT JOIN #inclusion_events I on I.person_id = Q.person_id and I.event_id = Q.event_id\r\n    GROUP BY Q.event_id, Q.person_id, Q.start_date, Q.end_date, Q.op_start_date, Q.op_end_date\r\n  ) MG -- matching groups\r\n\r\n)\r\nselect event_id, person_id, start_date, end_date, op_start_date, op_end_date\r\ninto #included_events\r\nFROM cteIncludedEvents Results\r\n\r\n;\r\n\r\n-- date offset strategy\r\n\r\nselect event_id, person_id, \r\n  case when DATEADD(day,0,start_date) > op_end_date then op_end_date else DATEADD(day,0,start_date) end as end_date\r\nINTO #strategy_ends\r\nfrom #included_events;\r\n\r\n\r\n-- generate cohort periods into #final_cohort\r\nwith cohort_ends (event_id, person_id, end_date) as\r\n(\r\n\t-- cohort exit dates\r\n  -- End Date Strategy\nSELECT event_id, person_id, end_date from #strategy_ends\n\r\n),\r\nfirst_ends (person_id, start_date, end_date) as\r\n(\r\n\tselect F.person_id, F.start_date, F.end_date\r\n\tFROM (\r\n\t  select I.event_id, I.person_id, I.start_date, E.end_date, row_number() over (partition by I.person_id, I.event_id order by E.end_date) as ordinal \r\n\t  from #included_events I\r\n\t  join cohort_ends E on I.event_id = E.event_id and I.person_id = E.person_id and E.end_date >= I.start_date\r\n\t) F\r\n\tWHERE F.ordinal = 1\r\n)\r\nselect person_id, start_date, end_date\r\nINTO #cohort_rows\r\nfrom first_ends;\r\n\r\nwith cteEndDates (person_id, end_date) AS -- the magic\r\n(\t\r\n\tSELECT\r\n\t\tperson_id\r\n\t\t, DATEADD(day,-1 * 0, event_date)  as end_date\r\n\tFROM\r\n\t(\r\n\t\tSELECT\r\n\t\t\tperson_id\r\n\t\t\t, event_date\r\n\t\t\t, event_type\r\n\t\t\t, MAX(start_ordinal) OVER (PARTITION BY person_id ORDER BY event_date, event_type ROWS UNBOUNDED PRECEDING) AS start_ordinal \r\n\t\t\t, ROW_NUMBER() OVER (PARTITION BY person_id ORDER BY event_date, event_type) AS overall_ord\r\n\t\tFROM\r\n\t\t(\r\n\t\t\tSELECT\r\n\t\t\t\tperson_id\r\n\t\t\t\t, start_date AS event_date\r\n\t\t\t\t, -1 AS event_type\r\n\t\t\t\t, ROW_NUMBER() OVER (PARTITION BY person_id ORDER BY start_date) AS start_ordinal\r\n\t\t\tFROM #cohort_rows\r\n\t\t\r\n\t\t\tUNION ALL\r\n\t\t\r\n\r\n\t\t\tSELECT\r\n\t\t\t\tperson_id\r\n\t\t\t\t, DATEADD(day,0,end_date) as end_date\r\n\t\t\t\t, 1 AS event_type\r\n\t\t\t\t, NULL\r\n\t\t\tFROM #cohort_rows\r\n\t\t) RAWDATA\r\n\t) e\r\n\tWHERE (2 * e.start_ordinal) - e.overall_ord = 0\r\n),\r\ncteEnds (person_id, start_date, end_date) AS\r\n(\r\n\tSELECT\r\n\t\t c.person_id\r\n\t\t, c.start_date\r\n\t\t, MIN(e.end_date) AS end_date\r\n\tFROM #cohort_rows c\r\n\tJOIN cteEndDates e ON c.person_id = e.person_id AND e.end_date >= c.start_date\r\n\tGROUP BY c.person_id, c.start_date\r\n)\r\nselect person_id, min(start_date) as start_date, end_date\r\ninto #final_cohort\r\nfrom cteEnds\r\ngroup by person_id, end_date\r\n;\r\n\r\nDELETE FROM @target_database_schema.@target_cohort_table where cohort_definition_id = @target_cohort_id;\r\nINSERT INTO @target_database_schema.@target_cohort_table (cohort_definition_id, subject_id, cohort_start_date, cohort_end_date)\r\nselect @target_cohort_id as cohort_definition_id, person_id, start_date, end_date \nFROM #final_cohort CO\r\n;\r\n\r\n\r\n\r\n\r\nTRUNCATE TABLE #strategy_ends;\nDROP TABLE #strategy_ends;\n\r\n\r\nTRUNCATE TABLE #cohort_rows;\r\nDROP TABLE #cohort_rows;\r\n\r\nTRUNCATE TABLE #final_cohort;\r\nDROP TABLE #final_cohort;\r\n\r\nTRUNCATE TABLE #inclusion_events;\r\nDROP TABLE #inclusion_events;\r\n\r\nTRUNCATE TABLE #qualified_events;\r\nDROP TABLE #qualified_events;\r\n\r\nTRUNCATE TABLE #included_events;\r\nDROP TABLE #included_events;\r\n\r\nTRUNCATE TABLE #Codesets;\r\nDROP TABLE #Codesets;\r\n"]
+  }
+}

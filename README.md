@@ -1,19 +1,32 @@
-[Study title]
+ODAP-B Long COVID
 =============
 
 <img src="https://img.shields.io/badge/Study%20Status-Repo%20Created-lightgray.svg" alt="Study Status: Repo Created">
 
-- Analytics use case(s): **-**
-- Study type: **-**
+- Analytics use case(s): **Patient-Level Prediction**
+- Study type: **Methods Research**
 - Tags: **-**
-- Study lead: **-**
-- Study lead forums tag: **[[Lead tag]](https://forums.ohdsi.org/u/[Lead tag])**
-- Study start date: **-**
-- Study end date: **-**
+- Study lead: **add name**
+- Study lead forums tag: **[add_username](https://forums.ohdsi.org/u/add_username)**
+- Study start date: **08 2022**
+- Study end date: **10 2022**
 - Protocol: **-**
 - Publications: **-**
 - Results explorer: **-**
 
-[Description (single paragraph)]
+In this study we explore a one-shot distributed algorithm for modified poisson regression approach for prospective studies with binary data with a focus on predicting rare outcomes of interest following a covid positive/negative test in children.
 
-[You can add other text at this point]
+Suggested Requirements
+===================
+- R studio (https://rstudio.com)
+- Java runtime environment
+
+Instructions to Install and Execute from GitHub
+========================================================
+
+- [Instructions to install the study library from GitHub using Renv (recommended)](STUDY-PACKAGE-SETUP.md)
+- [Instructions to execute the study ](STUDY-PACKAGE-EXECUTE.md)
+
+Results
+========================================================
+Once executed you will find a data.csv file in the specified outputFolder containing the patient-level data (we recommend not to share this) and a sharable json file containing the aggregate results of the study. 
