@@ -6,11 +6,11 @@
 \usage{
 execute(
   databaseDetails,
+  siteId,
   outputFolder,
   createCohorts = F,
   getData = F,
-  packageResults = F,
-  minCellCount = 5,
+  runAnalysis = F,
   sampleSize = NULL,
   logSettings,
   useBulkLoad = T
@@ -18,6 +18,8 @@ execute(
 }
 \arguments{
 \item{databaseDetails}{Database details created using \code{PatientLevelPrediction::createDatabaseDetails()}}
+
+\item{siteId}{Identifier for the database}
 
 \item{outputFolder}{Name of local folder to place results; make sure to use forward slashes
 (/). Do not use a folder on a network drive since this greatly impacts
@@ -27,10 +29,7 @@ performance.}
 
 \item{getData}{Extract the patient level data and save as a csv (this is not shared)}
 
-\item{packageResults}{Should results be packaged for later sharing?}
-
-\item{minCellCount}{The minimum number of subjects contributing to a count before it can be included 
-in packaged results.}
+\item{runAnalysis}{Run the analysis to create a shareable json result object?}
 
 \item{sampleSize}{The number of patients in the target cohort to sample (if NULL uses all patients)}
 
@@ -70,12 +69,11 @@ connectionDetails <- createConnectionDetails(dbms = "postgresql",
  )                                          
 
 execute(databaseDetails = databaseDetails,
+        siteId  = 'example',
         outputFolder = "c:/temp/study_results", 
         createCohorts = T,
         getData = T,
-        packageResults = F,
-        minCellCount = 5,
-        sampleSize = 10000,
+        runAnalysis  = T,
         logSettings = logSettings
         )
 }

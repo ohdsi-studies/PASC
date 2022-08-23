@@ -20,14 +20,13 @@
 #' This function executes the PASC Study.
 #' 
 #' @param databaseDetails      Database details created using \code{PatientLevelPrediction::createDatabaseDetails()} 
+#' @param siteId               Identifier for the database 
 #' @param outputFolder         Name of local folder to place results; make sure to use forward slashes
 #'                             (/). Do not use a folder on a network drive since this greatly impacts
 #'                             performance.
 #' @param createCohorts        Create the cohortTable table with the target population and outcome cohorts?
 #' @param getData              Extract the patient level data and save as a csv (this is not shared)
-#' @param packageResults       Should results be packaged for later sharing?     
-#' @param minCellCount         The minimum number of subjects contributing to a count before it can be included 
-#'                             in packaged results.
+#' @param runAnalysis          Run the analysis to create a shareable json result object?  
 #' @param sampleSize           The number of patients in the target cohort to sample (if NULL uses all patients)
 #' @param logSettings           The log setting \code{PatientLevelPrediction::createLogSettings()}    
 #' @param useBulkLoad           Use bulk load when inserting a large table into the database
@@ -58,12 +57,11 @@
 #'  )                                          
 #'
 #' execute(databaseDetails = databaseDetails,
+#'         siteId  = 'example',
 #'         outputFolder = "c:/temp/study_results", 
 #'         createCohorts = T,
 #'         getData = T,
-#'         packageResults = F,
-#'         minCellCount = 5,
-#'         sampleSize = 10000,
+#'         runAnalysis  = T,
 #'         logSettings = logSettings
 #'         )
 #' }
@@ -71,11 +69,11 @@
 #' @export
 execute <- function(
   databaseDetails,
+  siteId,
   outputFolder,
   createCohorts = F,
   getData = F,
-  packageResults = F,
-  minCellCount= 5,
+  runAnalysis = F,
   sampleSize = NULL,
   logSettings,
   useBulkLoad = T
@@ -139,9 +137,39 @@ execute <- function(
   }
   
   
+  if(runAnalysis){
+    # add code to package 
+    controlLoc <- system.file('settings/control.json', package = 'PASC')
+    controlR <- ParallelLogger::loadSettingsFromJson(controlLoc)
+    
+    data <- read.csv(file = file.path(outputFolder, 'data.csv'))
+    outcomes <- c(
+      'Outcome_hair_loss', 
+      'Outcome_loss_of_smell',
+      'Outcome_other_changes_in_smell_or_taste',
+      'Outcome_multisystem_inflammatory_syndrome',
+      'Outcome_addison_disease'
+      )
+    for(outcome in  outcomes){
   
-  # add code to package 
+      tempData <- data %>% dplyr::mutate(outcome = .data[[outcome]])
+    
+      if(!dir.exists(file.path(outputFolder, outcome))){
+        dir.create(file.path(outputFolder, outcome))
+      }
+      
+      # run the analysis
+      pda::pda(
+        ipdata = tempData, 
+        control = controlR, 
+        site_id = siteId, 
+        dir = file.path(outputFolder, outcome)
+        )
 
+    }
+    
+  }
+  
   invisible(NULL)
 }
 

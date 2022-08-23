@@ -94,30 +94,40 @@ convertData <- function(plpData){
   matData <- mappedData$dataMatrix
   colnames(matData) <-  mappedData$covariateRef$covariateName
   matData <- as.data.frame(as.matrix(matData))
+  # rename
+  matData <- dplyr::rename(
+    .data = matData, 
+    gender = .data$`gender = MALE`,
+    race = .data$`race = White`,
+    PMCA_2 = .data$`PMCA complex chronic`,
+    test_location = .data$`Outpatient visit at index`,
+    PCA_positivity = .data$`Cohort_covariate during day 0 through 0 days relative to index:  Positive covid test  `
+  ) %>%
+    dplyr::mutate(
+      PMCA_1 = .data$`PMCA non-complex chronic` | .data$`PMCA non-complex and non-chonic`,
+    )
+  
   colNamesOfInt <- c(
-    "race = White",
-    "gender = MALE", 
-    "PMCA complex chronic", 
-    "PMCA non-complex chronic", 
-    "PMCA non-complex and non-chonic", 
-    "Outpatient visit at index",
-    "Cohort_covariate during day 0 through 0 days relative to index:  Positive covid test  "
+    "race",
+    "gender", 
+    "PMCA_1", 
+    "PMCA_2", 
+    "test_location",
+    "PCA_positivity"
     )
   
   # convert matData$`age in years` 0 to 11, 12 to 20
-  age0to11 <- (matData$`age in years` <= 11)*1
-  age12to20 <- (matData$`age in years` >= 12 & matData$`age in years` <= 20)*1
+  age <- (matData$`age in years` <= 11)*1
+  #age12to20 <- (matData$`age in years` >= 12 & matData$`age in years` <= 20)*1
   # convert mappedData$labels[,c('rowId','cohortStartDate')] as 03/01/2020 to 02/28/2021 and 03/01/2021 to 12/31/2021
-  mar20tofeb21 <- (mappedData$labels$cohortStartDate >= as.Date('2020/03/01') & mappedData$labels$cohortStartDate <= as.Date('2021/02/28'))*1
-  mar21todec21 <- (mappedData$labels$cohortStartDate >= as.Date('2021/03/01') & mappedData$labels$cohortStartDate <= as.Date('2021/12/31'))*1
+  entrace_time_1 <- (mappedData$labels$cohortStartDate >= as.Date('2020/03/01') & mappedData$labels$cohortStartDate <= as.Date('2021/02/28'))*1
+  #mar21todec21 <- (mappedData$labels$cohortStartDate >= as.Date('2021/03/01') & mappedData$labels$cohortStartDate <= as.Date('2021/12/31'))*1
   
   allData <- cbind(
     mappedData$labels$rowId,
     matData[, colnames(matData)%in%colNamesOfInt], 
-    age0to11, 
-    age12to20, 
-    mar20tofeb21,
-    mar21todec21
+    age, 
+    entrace_time_1
     )
   colnames(allData)[1] <- 'rowId'
   

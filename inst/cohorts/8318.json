@@ -1,1 +1,647 @@
-"{\n\t\"cdmVersionRange\" : \">=5.0.0\",\n\t\"PrimaryCriteria\" : {\n\t\t\"CriteriaList\" : [\n\t\t\t{\n\t\t\t\t\"Measurement\" : {\n\t\t\t\t\t\"CodesetId\" : 2,\n\t\t\t\t\t\"OccurrenceStartDate\" : {\n\t\t\t\t\t\t\"Value\" : \"2020-03-01\",\n\t\t\t\t\t\t\"Op\" : \"bt\",\n\t\t\t\t\t\t\"Extent\" : \"2021-10-31\"\n\t\t\t\t\t},\n\t\t\t\t\t\"MeasurementTypeExclude\" : false,\n\t\t\t\t\t\"ValueAsConcept\" : [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 4181412,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Present\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"52101004\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 9191,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Positive\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"10828004\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 4126681,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"260373001\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45879438,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Present\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA9633-4\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45884084,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Positive\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA6576-8\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45877985,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA11882-0\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"Age\" : {\n\t\t\t\t\t\t\"Value\" : 21,\n\t\t\t\t\t\t\"Op\" : \"lt\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"Measurement\" : {\n\t\t\t\t\t\"CorrelatedCriteria\" : {\n\t\t\t\t\t\t\"Type\" : \"ALL\",\n\t\t\t\t\t\t\"CriteriaList\" : [\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"Criteria\" : {\n\t\t\t\t\t\t\t\t\t\"Measurement\" : {\n\t\t\t\t\t\t\t\t\t\t\"CodesetId\" : 2,\n\t\t\t\t\t\t\t\t\t\t\"OccurrenceStartDate\" : {\n\t\t\t\t\t\t\t\t\t\t\t\"Value\" : \"2020-03-01\",\n\t\t\t\t\t\t\t\t\t\t\t\"Op\" : \"bt\",\n\t\t\t\t\t\t\t\t\t\t\t\"Extent\" : \"2021-10-31\"\n\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\"MeasurementTypeExclude\" : false,\n\t\t\t\t\t\t\t\t\t\t\"ValueAsConcept\" : [\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_ID\" : 4181412,\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Present\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"52101004\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_ID\" : 9191,\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Positive\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"10828004\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_ID\" : 4126681,\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Detected\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"260373001\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45879438,\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Present\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA9633-4\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45884084,\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Positive\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA6576-8\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45877985,\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Detected\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA11882-0\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t]\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"StartWindow\" : {\n\t\t\t\t\t\t\t\t\t\"Start\" : {\n\t\t\t\t\t\t\t\t\t\t\"Coeff\" : -1\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"End\" : {\n\t\t\t\t\t\t\t\t\t\t\"Coeff\" : 1\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"UseIndexEnd\" : false,\n\t\t\t\t\t\t\t\t\t\"UseEventEnd\" : false\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"RestrictVisit\" : false,\n\t\t\t\t\t\t\t\t\"IgnoreObservationPeriod\" : false,\n\t\t\t\t\t\t\t\t\"Occurrence\" : {\n\t\t\t\t\t\t\t\t\t\"Type\" : 0,\n\t\t\t\t\t\t\t\t\t\"Count\" : 0,\n\t\t\t\t\t\t\t\t\t\"IsDistinct\" : false\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"DemographicCriteriaList\" : [],\n\t\t\t\t\t\t\"Groups\" : []\n\t\t\t\t\t},\n\t\t\t\t\t\"CodesetId\" : 2,\n\t\t\t\t\t\"OccurrenceStartDate\" : {\n\t\t\t\t\t\t\"Value\" : \"2020-03-01\",\n\t\t\t\t\t\t\"Op\" : \"bt\",\n\t\t\t\t\t\t\"Extent\" : \"2021-10-31\"\n\t\t\t\t\t},\n\t\t\t\t\t\"MeasurementTypeExclude\" : false,\n\t\t\t\t\t\"ValueAsConcept\" : [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 9189,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Negative\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"260385009\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 9190,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Not detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"260415000\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 4132135,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Absent\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"2667000\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45884086,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Absent\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA9634-2\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 37079494,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Negative (0)\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA29782-2\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45878583,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Negative\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA6577-6\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 45880296,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Not detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"LA11883-8\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"LOINC\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 3661867,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Not detected in pooled specimen\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : null,\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : null,\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Unknown\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"895231008\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Meas Value\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : null\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"Age\" : {\n\t\t\t\t\t\t\"Value\" : 21,\n\t\t\t\t\t\t\"Op\" : \"lt\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t],\n\t\t\"ObservationWindow\" : {\n\t\t\t\"PriorDays\" : 0,\n\t\t\t\"PostDays\" : 0\n\t\t},\n\t\t\"PrimaryCriteriaLimit\" : {\n\t\t\t\"Type\" : \"First\"\n\t\t}\n\t},\n\t\"ConceptSets\" : [\n\t\t{\n\t\t\t\"id\" : 1,\n\t\t\t\"name\" : \"SARS-CoV-2 positive test measurement pre-coordinated\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"items\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 37310282,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"2019 novel coronavirus detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"1240581000000104\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 756055,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Measurement of Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"OMOP4873969\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"OMOP Extension\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Lab Test\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 756084,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Measurement of Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) using Nucleic acid amplification technique in Unspecified specimen\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"OMOP4873968\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"OMOP Extension\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Lab Test\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 37310282,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Severe acute respiratory syndrome coronavirus 2 detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"N\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Non-Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"1240581000000104\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : false,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\" : 2,\n\t\t\t\"name\" : \"SARS-CoV-2 test measurement\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"items\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 756055,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Measurement of severe acute respiratory syndrome coronavirus 2\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"OMOP4873969\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"OMOP Extension\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Procedure\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 704058,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"2019-nCoV Coronavirus, SARS-CoV-2/2019-nCoV (COVID-19), any technique, multiple types or subtypes (includes all targets), non-CDC, making use of high throughput technologies as described by CMS-2020-01-R\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"U0004\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"HCPCS\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"HCPCS\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 704059,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Infectious agent detection by nucleic acid (DNA or RNA); severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) (Coronavirus disease [COVID-19]), amplified probe technique, making use of high throughput technologies as described by CMS-2020-01-R\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"U0003\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"HCPCS\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"HCPCS\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 37310258,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Measurement of Severe acute respiratory syndrome coronavirus 2 antibody\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"1240461000000109\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Procedure\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : true,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\" : 5,\n\t\t\t\"name\" : \"Inpatient Visit or ER or outpatient\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"items\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 262,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Emergency Room and Inpatient Visit\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"ERIP\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Visit\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 9201,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Inpatient Visit\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"IP\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Visit\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 9203,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Emergency Room Visit\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"ER\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Visit\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 262,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Emergency Room and Inpatient Visit\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"ERIP\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Visit\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 8870,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Emergency Room - Hospital\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"23\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"CMS Place of Service\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Visit\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 9202,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Outpatient Visit\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"OP\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Visit\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 8756,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Outpatient Hospital\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"S\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"22\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Visit\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"CMS Place of Service\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Visit\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"id\" : 6,\n\t\t\t\"name\" : \"SARS-CoV-2 negative test measurement pre-coordinated\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"items\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 37310281,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Severe acute respiratory syndrome coronavirus 2 not detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"N\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Non-Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"1240591000000102\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"concept\" : {\n\t\t\t\t\t\t\t\"CONCEPT_ID\" : 37310281,\n\t\t\t\t\t\t\t\"CONCEPT_NAME\" : \"Severe acute respiratory syndrome coronavirus 2 not detected\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT\" : \"N\",\n\t\t\t\t\t\t\t\"STANDARD_CONCEPT_CAPTION\" : \"Non-Standard\",\n\t\t\t\t\t\t\t\"INVALID_REASON\" : \"V\",\n\t\t\t\t\t\t\t\"INVALID_REASON_CAPTION\" : \"Valid\",\n\t\t\t\t\t\t\t\"CONCEPT_CODE\" : \"1240591000000102\",\n\t\t\t\t\t\t\t\"DOMAIN_ID\" : \"Measurement\",\n\t\t\t\t\t\t\t\"VOCABULARY_ID\" : \"SNOMED\",\n\t\t\t\t\t\t\t\"CONCEPT_CLASS_ID\" : \"Clinical Finding\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"isExcluded\" : false,\n\t\t\t\t\t\t\"includeDescendants\" : true,\n\t\t\t\t\t\t\"includeMapped\" : false\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t}\n\t],\n\t\"QualifiedLimit\" : {\n\t\t\"Type\" : \"First\"\n\t},\n\t\"ExpressionLimit\" : {\n\t\t\"Type\" : \"First\"\n\t},\n\t\"InclusionRules\" : [\n\t\t{\n\t\t\t\"name\" : \"has >=180 day prior observation\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"Type\" : \"ALL\",\n\t\t\t\t\"CriteriaList\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"Criteria\" : {\n\t\t\t\t\t\t\t\"ObservationPeriod\" : {}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"StartWindow\" : {\n\t\t\t\t\t\t\t\"Start\" : {\n\t\t\t\t\t\t\t\t\"Coeff\" : -1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"End\" : {\n\t\t\t\t\t\t\t\t\"Days\" : 180,\n\t\t\t\t\t\t\t\t\"Coeff\" : -1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"UseIndexEnd\" : false,\n\t\t\t\t\t\t\t\"UseEventEnd\" : false\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"EndWindow\" : {\n\t\t\t\t\t\t\t\"Start\" : {\n\t\t\t\t\t\t\t\t\"Days\" : 0,\n\t\t\t\t\t\t\t\t\"Coeff\" : -1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"End\" : {\n\t\t\t\t\t\t\t\t\"Coeff\" : 1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"UseIndexEnd\" : false,\n\t\t\t\t\t\t\t\"UseEventEnd\" : true\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"RestrictVisit\" : false,\n\t\t\t\t\t\t\"IgnoreObservationPeriod\" : false,\n\t\t\t\t\t\t\"Occurrence\" : {\n\t\t\t\t\t\t\t\"Type\" : 2,\n\t\t\t\t\t\t\t\"Count\" : 1,\n\t\t\t\t\t\t\t\"IsDistinct\" : false\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"DemographicCriteriaList\" : [],\n\t\t\t\t\"Groups\" : []\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"name\" : \"inpatient, outpatient or ER visit\",\n\t\t\t\"expression\" : {\n\t\t\t\t\"Type\" : \"ALL\",\n\t\t\t\t\"CriteriaList\" : [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"Criteria\" : {\n\t\t\t\t\t\t\t\"VisitOccurrence\" : {\n\t\t\t\t\t\t\t\t\"VisitTypeExclude\" : false\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"StartWindow\" : {\n\t\t\t\t\t\t\t\"Start\" : {\n\t\t\t\t\t\t\t\t\"Coeff\" : -1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"End\" : {\n\t\t\t\t\t\t\t\t\"Days\" : 0,\n\t\t\t\t\t\t\t\t\"Coeff\" : -1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"UseIndexEnd\" : false,\n\t\t\t\t\t\t\t\"UseEventEnd\" : false\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"EndWindow\" : {\n\t\t\t\t\t\t\t\"Start\" : {\n\t\t\t\t\t\t\t\t\"Days\" : 0,\n\t\t\t\t\t\t\t\t\"Coeff\" : 1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"End\" : {\n\t\t\t\t\t\t\t\t\"Coeff\" : 1\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"UseIndexEnd\" : false,\n\t\t\t\t\t\t\t\"UseEventEnd\" : true\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"RestrictVisit\" : false,\n\t\t\t\t\t\t\"IgnoreObservationPeriod\" : false,\n\t\t\t\t\t\t\"Occurrence\" : {\n\t\t\t\t\t\t\t\"Type\" : 2,\n\t\t\t\t\t\t\t\"Count\" : 1,\n\t\t\t\t\t\t\t\"IsDistinct\" : false\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"DemographicCriteriaList\" : [],\n\t\t\t\t\"Groups\" : []\n\t\t\t}\n\t\t}\n\t],\n\t\"EndStrategy\" : {\n\t\t\"DateOffset\" : {\n\t\t\t\"DateField\" : \"EndDate\",\n\t\t\t\"Offset\" : 0\n\t\t}\n\t},\n\t\"CensoringCriteria\" : [],\n\t\"CollapseSettings\" : {\n\t\t\"CollapseType\" : \"ERA\",\n\t\t\"EraPad\" : 90\n\t},\n\t\"CensorWindow\" : {}\n}"
+{
+  "ConceptSets": [
+    {
+      "id": 1,
+      "name": "SARS-CoV-2 positive test measurement pre-coordinated",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1240581000000104",
+              "CONCEPT_ID": 37310282,
+              "CONCEPT_NAME": "2019 novel coronavirus detected",
+              "DOMAIN_ID": "Measurement",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Lab Test",
+              "CONCEPT_CODE": "OMOP4873969",
+              "CONCEPT_ID": 756055,
+              "CONCEPT_NAME": "Measurement of Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
+              "DOMAIN_ID": "Measurement",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "OMOP Extension"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Lab Test",
+              "CONCEPT_CODE": "OMOP4873968",
+              "CONCEPT_ID": 756084,
+              "CONCEPT_NAME": "Measurement of Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) using Nucleic acid amplification technique in Unspecified specimen",
+              "DOMAIN_ID": "Measurement",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "OMOP Extension"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1240581000000104",
+              "CONCEPT_ID": 37310282,
+              "CONCEPT_NAME": "Severe acute respiratory syndrome coronavirus 2 detected",
+              "DOMAIN_ID": "Measurement",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "SNOMED"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "SARS-CoV-2 test measurement",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Procedure",
+              "CONCEPT_CODE": "OMOP4873969",
+              "CONCEPT_ID": 756055,
+              "CONCEPT_NAME": "Measurement of severe acute respiratory syndrome coronavirus 2",
+              "DOMAIN_ID": "Measurement",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "OMOP Extension"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "HCPCS",
+              "CONCEPT_CODE": "U0004",
+              "CONCEPT_ID": 704058,
+              "CONCEPT_NAME": "2019-nCoV Coronavirus, SARS-CoV-2/2019-nCoV (COVID-19), any technique, multiple types or subtypes (includes all targets), non-CDC, making use of high throughput technologies as described by CMS-2020-01-R",
+              "DOMAIN_ID": "Measurement",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "HCPCS"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "HCPCS",
+              "CONCEPT_CODE": "U0003",
+              "CONCEPT_ID": 704059,
+              "CONCEPT_NAME": "Infectious agent detection by nucleic acid (DNA or RNA); severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) (Coronavirus disease [COVID-19]), amplified probe technique, making use of high throughput technologies as described by CMS-2020-01-R",
+              "DOMAIN_ID": "Measurement",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "HCPCS"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Procedure",
+              "CONCEPT_CODE": "1240461000000109",
+              "CONCEPT_ID": 37310258,
+              "CONCEPT_NAME": "Measurement of Severe acute respiratory syndrome coronavirus 2 antibody",
+              "DOMAIN_ID": "Measurement",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "isExcluded": true,
+            "includeDescendants": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "name": "Inpatient Visit or ER or outpatient",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Visit",
+              "CONCEPT_CODE": "ERIP",
+              "CONCEPT_ID": 262,
+              "CONCEPT_NAME": "Emergency Room and Inpatient Visit",
+              "DOMAIN_ID": "Visit",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "Visit"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Visit",
+              "CONCEPT_CODE": "IP",
+              "CONCEPT_ID": 9201,
+              "CONCEPT_NAME": "Inpatient Visit",
+              "DOMAIN_ID": "Visit",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "Visit"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Visit",
+              "CONCEPT_CODE": "ER",
+              "CONCEPT_ID": 9203,
+              "CONCEPT_NAME": "Emergency Room Visit",
+              "DOMAIN_ID": "Visit",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "Visit"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Visit",
+              "CONCEPT_CODE": "ERIP",
+              "CONCEPT_ID": 262,
+              "CONCEPT_NAME": "Emergency Room and Inpatient Visit",
+              "DOMAIN_ID": "Visit",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "Visit"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Visit",
+              "CONCEPT_CODE": "23",
+              "CONCEPT_ID": 8870,
+              "CONCEPT_NAME": "Emergency Room - Hospital",
+              "DOMAIN_ID": "Visit",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "CMS Place of Service"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Visit",
+              "CONCEPT_CODE": "OP",
+              "CONCEPT_ID": 9202,
+              "CONCEPT_NAME": "Outpatient Visit",
+              "DOMAIN_ID": "Visit",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "Visit"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Visit",
+              "CONCEPT_CODE": "22",
+              "CONCEPT_ID": 8756,
+              "CONCEPT_NAME": "Outpatient Hospital",
+              "DOMAIN_ID": "Visit",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "CMS Place of Service"
+            },
+            "includeDescendants": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "name": "SARS-CoV-2 negative test measurement pre-coordinated",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1240591000000102",
+              "CONCEPT_ID": 37310281,
+              "CONCEPT_NAME": "Severe acute respiratory syndrome coronavirus 2 not detected",
+              "DOMAIN_ID": "Measurement",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "1240591000000102",
+              "CONCEPT_ID": 37310281,
+              "CONCEPT_NAME": "Severe acute respiratory syndrome coronavirus 2 not detected",
+              "DOMAIN_ID": "Measurement",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
+          }
+        ]
+      }
+    }
+  ],
+  "PrimaryCriteria": {
+    "CriteriaList": [
+      {
+        "Measurement": {
+          "CodesetId": 2,
+          "OccurrenceStartDate": {
+            "Value": "2020-03-01",
+            "Extent": "2021-10-31",
+            "Op": "bt"
+          },
+          "ValueAsConcept": [
+            {
+              "CONCEPT_CODE": "52101004",
+              "CONCEPT_ID": 4181412,
+              "CONCEPT_NAME": "Present",
+              "DOMAIN_ID": "Meas Value",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            {
+              "CONCEPT_CODE": "10828004",
+              "CONCEPT_ID": 9191,
+              "CONCEPT_NAME": "Positive",
+              "DOMAIN_ID": "Meas Value",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            {
+              "CONCEPT_CODE": "260373001",
+              "CONCEPT_ID": 4126681,
+              "CONCEPT_NAME": "Detected",
+              "DOMAIN_ID": "Meas Value",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            {
+              "CONCEPT_CODE": "LA9633-4",
+              "CONCEPT_ID": 45879438,
+              "CONCEPT_NAME": "Present",
+              "DOMAIN_ID": "Meas Value",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "LOINC"
+            },
+            {
+              "CONCEPT_CODE": "LA6576-8",
+              "CONCEPT_ID": 45884084,
+              "CONCEPT_NAME": "Positive",
+              "DOMAIN_ID": "Meas Value",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "LOINC"
+            },
+            {
+              "CONCEPT_CODE": "LA11882-0",
+              "CONCEPT_ID": 45877985,
+              "CONCEPT_NAME": "Detected",
+              "DOMAIN_ID": "Meas Value",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "LOINC"
+            }
+          ],
+          "Age": {
+            "Value": 21,
+            "Op": "lt"
+          }
+        }
+      },
+      {
+        "Measurement": {
+          "CorrelatedCriteria": {
+            "Type": "ALL",
+            "CriteriaList": [
+              {
+                "Criteria": {
+                  "Measurement": {
+                    "CodesetId": 2,
+                    "OccurrenceStartDate": {
+                      "Value": "2020-03-01",
+                      "Extent": "2021-10-31",
+                      "Op": "bt"
+                    },
+                    "ValueAsConcept": [
+                      {
+                        "CONCEPT_CODE": "52101004",
+                        "CONCEPT_ID": 4181412,
+                        "CONCEPT_NAME": "Present",
+                        "DOMAIN_ID": "Meas Value",
+                        "INVALID_REASON_CAPTION": "Unknown",
+                        "STANDARD_CONCEPT_CAPTION": "Unknown",
+                        "VOCABULARY_ID": "SNOMED"
+                      },
+                      {
+                        "CONCEPT_CODE": "10828004",
+                        "CONCEPT_ID": 9191,
+                        "CONCEPT_NAME": "Positive",
+                        "DOMAIN_ID": "Meas Value",
+                        "INVALID_REASON_CAPTION": "Unknown",
+                        "STANDARD_CONCEPT_CAPTION": "Unknown",
+                        "VOCABULARY_ID": "SNOMED"
+                      },
+                      {
+                        "CONCEPT_CODE": "260373001",
+                        "CONCEPT_ID": 4126681,
+                        "CONCEPT_NAME": "Detected",
+                        "DOMAIN_ID": "Meas Value",
+                        "INVALID_REASON_CAPTION": "Unknown",
+                        "STANDARD_CONCEPT_CAPTION": "Unknown",
+                        "VOCABULARY_ID": "SNOMED"
+                      },
+                      {
+                        "CONCEPT_CODE": "LA9633-4",
+                        "CONCEPT_ID": 45879438,
+                        "CONCEPT_NAME": "Present",
+                        "DOMAIN_ID": "Meas Value",
+                        "INVALID_REASON_CAPTION": "Unknown",
+                        "STANDARD_CONCEPT_CAPTION": "Unknown",
+                        "VOCABULARY_ID": "LOINC"
+                      },
+                      {
+                        "CONCEPT_CODE": "LA6576-8",
+                        "CONCEPT_ID": 45884084,
+                        "CONCEPT_NAME": "Positive",
+                        "DOMAIN_ID": "Meas Value",
+                        "INVALID_REASON_CAPTION": "Unknown",
+                        "STANDARD_CONCEPT_CAPTION": "Unknown",
+                        "VOCABULARY_ID": "LOINC"
+                      },
+                      {
+                        "CONCEPT_CODE": "LA11882-0",
+                        "CONCEPT_ID": 45877985,
+                        "CONCEPT_NAME": "Detected",
+                        "DOMAIN_ID": "Meas Value",
+                        "INVALID_REASON_CAPTION": "Unknown",
+                        "STANDARD_CONCEPT_CAPTION": "Unknown",
+                        "VOCABULARY_ID": "LOINC"
+                      }
+                    ]
+                  }
+                },
+                "StartWindow": {
+                  "Start": {
+                    "Coeff": -1
+                  },
+                  "End": {
+                    "Coeff": 1
+                  },
+                  "UseEventEnd": false
+                },
+                "Occurrence": {
+                  "Type": 0,
+                  "Count": 0
+                }
+              }
+            ],
+            "DemographicCriteriaList": [],
+            "Groups": []
+          },
+          "CodesetId": 2,
+          "OccurrenceStartDate": {
+            "Value": "2020-03-01",
+            "Extent": "2021-10-31",
+            "Op": "bt"
+          },
+          "ValueAsConcept": [
+            {
+              "CONCEPT_CODE": "260385009",
+              "CONCEPT_ID": 9189,
+              "CONCEPT_NAME": "Negative",
+              "DOMAIN_ID": "Meas Value",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            {
+              "CONCEPT_CODE": "260415000",
+              "CONCEPT_ID": 9190,
+              "CONCEPT_NAME": "Not detected",
+              "DOMAIN_ID": "Meas Value",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            {
+              "CONCEPT_CODE": "2667000",
+              "CONCEPT_ID": 4132135,
+              "CONCEPT_NAME": "Absent",
+              "DOMAIN_ID": "Meas Value",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            {
+              "CONCEPT_CODE": "LA9634-2",
+              "CONCEPT_ID": 45884086,
+              "CONCEPT_NAME": "Absent",
+              "DOMAIN_ID": "Meas Value",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "LOINC"
+            },
+            {
+              "CONCEPT_CODE": "LA29782-2",
+              "CONCEPT_ID": 37079494,
+              "CONCEPT_NAME": "Negative (0)",
+              "DOMAIN_ID": "Meas Value",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "LOINC"
+            },
+            {
+              "CONCEPT_CODE": "LA6577-6",
+              "CONCEPT_ID": 45878583,
+              "CONCEPT_NAME": "Negative",
+              "DOMAIN_ID": "Meas Value",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "LOINC"
+            },
+            {
+              "CONCEPT_CODE": "LA11883-8",
+              "CONCEPT_ID": 45880296,
+              "CONCEPT_NAME": "Not detected",
+              "DOMAIN_ID": "Meas Value",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "LOINC"
+            },
+            {
+              "CONCEPT_CODE": "895231008",
+              "CONCEPT_ID": 3661867,
+              "CONCEPT_NAME": "Not detected in pooled specimen",
+              "DOMAIN_ID": "Meas Value",
+              "INVALID_REASON_CAPTION": "Unknown",
+              "STANDARD_CONCEPT_CAPTION": "Unknown",
+              "VOCABULARY_ID": "SNOMED"
+            }
+          ],
+          "Age": {
+            "Value": 21,
+            "Op": "lt"
+          }
+        }
+      }
+    ],
+    "ObservationWindow": {
+      "PriorDays": 0,
+      "PostDays": 0
+    },
+    "PrimaryCriteriaLimit": {
+      "Type": "First"
+    }
+  },
+  "QualifiedLimit": {
+    "Type": "First"
+  },
+  "ExpressionLimit": {
+    "Type": "First"
+  },
+  "InclusionRules": [
+    {
+      "name": "has >=365*3 days prior observation",
+      "expression": {
+        "Type": "ALL",
+        "CriteriaList": [
+          {
+            "Criteria": {
+              "ObservationPeriod": {}
+            },
+            "StartWindow": {
+              "Start": {
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 1095,
+                "Coeff": -1
+              },
+              "UseEventEnd": false
+            },
+            "EndWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": -1
+              },
+              "End": {
+                "Coeff": 1
+              },
+              "UseEventEnd": true
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
+    },
+    {
+      "name": "inpatient, outpatient or ER visit",
+      "expression": {
+        "Type": "ALL",
+        "CriteriaList": [
+          {
+            "Criteria": {
+              "VisitOccurrence": {}
+            },
+            "StartWindow": {
+              "Start": {
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 0,
+                "Coeff": -1
+              },
+              "UseEventEnd": false
+            },
+            "EndWindow": {
+              "Start": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "End": {
+                "Coeff": 1
+              },
+              "UseEventEnd": true
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
+    }
+  ],
+  "EndStrategy": {
+    "DateOffset": {
+      "DateField": "EndDate",
+      "Offset": 0
+    }
+  },
+  "CensoringCriteria": [],
+  "CollapseSettings": {
+    "CollapseType": "ERA",
+    "EraPad": 90
+  },
+  "CensorWindow": {},
+  "cdmVersionRange": ">=5.0.0"
+}
