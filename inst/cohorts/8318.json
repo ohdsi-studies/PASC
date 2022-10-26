@@ -286,6 +286,44 @@
           }
         ]
       }
+    },
+    {
+      "id": 7,
+      "name": "COVID-19",
+      "expression": {
+        "items": [
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "840539006",
+              "CONCEPT_ID": 37311061,
+              "CONCEPT_NAME": "COVID-19",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Finding",
+              "CONCEPT_CODE": "840539006",
+              "CONCEPT_ID": 37311061,
+              "CONCEPT_NAME": "COVID-19",
+              "DOMAIN_ID": "Condition",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "SNOMED"
+            },
+            "includeDescendants": true
+          }
+        ]
+      }
     }
   ],
   "PrimaryCriteria": {
@@ -370,9 +408,8 @@
                   "Measurement": {
                     "CodesetId": 2,
                     "OccurrenceStartDate": {
-                      "Value": "2020-03-01",
-                      "Extent": "2021-10-31",
-                      "Op": "bt"
+                      "Value": "2021-10-31",
+                      "Op": "lt"
                     },
                     "ValueAsConcept": [
                       {
@@ -430,6 +467,31 @@
                         "VOCABULARY_ID": "LOINC"
                       }
                     ]
+                  }
+                },
+                "StartWindow": {
+                  "Start": {
+                    "Coeff": -1
+                  },
+                  "End": {
+                    "Coeff": 1
+                  },
+                  "UseEventEnd": false
+                },
+                "Occurrence": {
+                  "Type": 0,
+                  "Count": 0
+                }
+              },
+              {
+                "Criteria": {
+                  "ConditionOccurrence": {
+                    "CodesetId": 7,
+                    "OccurrenceStartDate": {
+                      "Value": "2021-10-31",
+                      "Extent": "2021-10-31",
+                      "Op": "lt"
+                    }
                   }
                 },
                 "StartWindow": {
@@ -539,7 +601,7 @@
     ],
     "ObservationWindow": {
       "PriorDays": 0,
-      "PostDays": 0
+      "PostDays": 180
     },
     "PrimaryCriteriaLimit": {
       "Type": "First"
@@ -553,7 +615,7 @@
   },
   "InclusionRules": [
     {
-      "name": "has >=365*3 days prior observation",
+      "name": "has >=365 days prior observation",
       "expression": {
         "Type": "ALL",
         "CriteriaList": [
@@ -566,7 +628,7 @@
                 "Coeff": -1
               },
               "End": {
-                "Days": 1095,
+                "Days": 365,
                 "Coeff": -1
               },
               "UseEventEnd": false
@@ -614,6 +676,39 @@
               "Start": {
                 "Days": 0,
                 "Coeff": 1
+              },
+              "End": {
+                "Coeff": 1
+              },
+              "UseEventEnd": true
+            },
+            "Occurrence": {
+              "Type": 2,
+              "Count": 1
+            }
+          }
+        ],
+        "DemographicCriteriaList": [],
+        "Groups": []
+      }
+    },
+    {
+      "name": "observed for whole study",
+      "expression": {
+        "Type": "ALL",
+        "CriteriaList": [
+          {
+            "Criteria": {
+              "ObservationPeriod": {
+                "PeriodEndDate": {
+                  "Value": "2021-10-31",
+                  "Op": "gte"
+                }
+              }
+            },
+            "StartWindow": {
+              "Start": {
+                "Coeff": -1
               },
               "End": {
                 "Coeff": 1

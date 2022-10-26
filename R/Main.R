@@ -152,16 +152,23 @@ execute <- function(
       )
     for(outcome in  outcomes){
   
-      tempData <- data %>% dplyr::mutate(outcome = .data[[outcome]])
+      tempData <- data %>% 
+        dplyr::mutate(outcome = .data[[outcome]]) %>%
+        dplyr::filter(!is.na(.data$outcome))
     
       if(!dir.exists(file.path(outputFolder, outcome))){
         dir.create(file.path(outputFolder, outcome))
       }
       
+      # save the control json in the output folder
+      ParallelLogger::saveSettingsToJson(
+        object = controlR, 
+        fileName = file.path(outputFolder, outcome, 'control.json')
+          )
+      
       # run the analysis
       pda::pda(
         ipdata = tempData, 
-        control = controlR, 
         site_id = siteId, 
         dir = file.path(outputFolder, outcome)
         )

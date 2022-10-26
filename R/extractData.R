@@ -104,7 +104,7 @@ convertData <- function(plpData){
     PCA_positivity = .data$`Cohort_covariate during day 0 through 0 days relative to index:  Positive covid test  `
   ) %>%
     dplyr::mutate(
-      PMCA_1 = .data$`PMCA non-complex chronic` | .data$`PMCA non-complex and non-chonic`,
+      PMCA_1 = (.data$`PMCA non-complex chronic` | .data$`PMCA non-complex and non-chonic`)*1,
     )
   
   colNamesOfInt <- c(
